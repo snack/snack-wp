@@ -1,0 +1,15 @@
+.hello {
+	color: #787878;
+}
+
+@media screen an (max-width: 80px) {
+	.hohum {
+		background-image: url('up.png');
+		margin-top: -40.3rem;
+	}
+}
+
+.goodbye {
+	background-position: 2rem 61.025rem;
+	background-color: green;
+}
