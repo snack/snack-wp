@@ -31,7 +31,7 @@ Tema básico para iniciar um projeto em Wordpress baseado no [A2Boilerplate](htt
 Clonar o repositório para a pasta de temas do wordpress: 
 > /wp-content/themes/
 
-    git clone https://github.com/airton/wordpress-boilerplate.git
+    git clone https://github.com/a2comunicacao/wordpress-boilerplate.git
 
 ## Adicionando novos templates de páginas ##
 Criar um novo arquivo dentro da pasta do tema, ex:  
