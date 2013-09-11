@@ -140,25 +140,14 @@ if ( ! function_exists( 'wordpress_boilerplate_setup' ) ):
 				$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 			}
 		}
-
 	}
 
 	endif;
 
 	// LINK CANONICAL
-	function fix_links($input) {
-		$normalized = str_replace( home_url() . '/', '/', $input);
-		$normalized = str_replace( home_url(), '/', '/', $normalized);
-		return $normalized;
+	function fix_links($buffer){
+	   return (str_replace(home_url().'/', "/", $buffer)); 
 	}
-
-	// Adictionar script jQuery
-	/*function my_scripts_method() {
-		//wp_deregister_script( 'jquery' );
-		//wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js');
-		//wp_enqueue_script('jquery','','','',true);
-		//wp_enqueue_script('jquery','http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js','','',true);
-	}  */  
 
 	add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
