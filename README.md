@@ -5,24 +5,24 @@ Tema básico para iniciar um projeto em Wordpress baseado no [A2Boilerplate](htt
 
 ## Estrutura ##
 
->* [CSS](https://github.com/a2comunicacao/A2boilerplate#css)
+* [CSS](https://github.com/a2comunicacao/A2boilerplate#css)
 	>* [SASS](https://github.com/a2comunicacao/A2boilerplate#sass)
->* IN
+* IN
 	>* `mobile_detect.php`
 	>* `scripts.php`
->* [JS](#js)
+* [JS](#js)
 	>* LIBS
 		>* jQuery
 		>* Modernizr
 		>* Respond
 	>* `scripts.js`
->* `header.php`
->* `footer.php`
->* `index.php`
->* `page.php`
->* `single.php`
->* `category.php`
->* `functions.php`
+* `header.php`
+* `footer.php`
+* `index.php`
+* `page.php`
+* `single.php`
+* `category.php`
+* `functions.php`
 
 
 
