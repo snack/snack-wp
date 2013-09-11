@@ -22,7 +22,9 @@ Tema básico para iniciar um projeto em Wordpress baseado no [A2Boilerplate](htt
 * `page.php`
 * `single.php`
 * `category.php`
+* `sidebar.php`
 * `functions.php`
+
 
 
 

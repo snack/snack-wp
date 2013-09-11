@@ -47,11 +47,11 @@ if ( ! function_exists( 'wordpress_boilerplate_setup' ) ):
 
 		// WIDGETS
 		register_sidebar( array(
-			'name' => __( 'Widget 1' ),
-			'id' => 'destaque1',
+			'id' => 'widget',
+			'name' => __( 'Widget' ),			
 			'description' => __( '1º Widget'),
-			'before_widget' => '<div class="fourcol box-featured">',
-			'after_widget' => '</div>',
+			'before_widget' => '<li class="widget %s">',
+			'after_widget' => '</li>',
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
 		));
