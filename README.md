@@ -6,16 +6,16 @@ Tema básico para iniciar um projeto em Wordpress baseado no [A2Boilerplate](htt
 ## Estrutura ##
 
 * [CSS](https://github.com/a2comunicacao/A2boilerplate#css)
-	>* [SASS](https://github.com/a2comunicacao/A2boilerplate#sass)
+	* [SASS](https://github.com/a2comunicacao/A2boilerplate#sass)
 * IN
-	>* `mobile_detect.php`
-	>* `scripts.php`
+	* `mobile_detect.php`
+	* `scripts.php`
 * [JS](#js)
-	>* LIBS
-		>* jQuery
-		>* Modernizr
-		>* Respond
-	>* `scripts.js`
+	* LIBS
+		* jQuery
+		* Modernizr
+		* Respond
+	* `scripts.js`
 * `header.php`
 * `footer.php`
 * `index.php`
