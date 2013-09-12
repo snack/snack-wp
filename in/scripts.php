@@ -1,7 +1,18 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.0.min.js"><\/script>')</script>
+<!-- VERIFICAR SE NÃO É MOBILE -->
+<?php if(!$isMobile): ?>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
+	<!-- jQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<!-- scripts.js -->
+	<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
+
+<?php else:  ?>
+<!-- SCRIPTS PARA MOBILE SÃO CARREGADOS AQUI -->
+
+
+<?php endif; ?>
+
 
 <!-- Google Analytics -->
 <script>
