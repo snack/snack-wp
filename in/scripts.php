@@ -7,6 +7,9 @@
 	<!-- scripts.js -->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 
+	<!-- wp_footer do wordpress -->
+	<?php wp_footer();  ?>
+	
 <?php else:  ?>
 <!-- SCRIPTS PARA MOBILE SÃO CARREGADOS AQUI -->
 

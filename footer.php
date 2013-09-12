@@ -1,8 +1,5 @@
 
-<?php 
-	include(get_template_directory().'/in/scripts.php');
-	wp_footer(); 	
-?>
+<?php include(get_template_directory().'/in/scripts.php'); ?>
 
 </body>
 </html>
