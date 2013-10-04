@@ -1,9 +1,9 @@
 <?php ob_start("fix_links"); ?>
 <!DOCTYPE html>
-<!--[if IE 7]>    <html class="no-js ie7"  <?php language_attributes(); ?>>     <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8"  <?php language_attributes(); ?>>     <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9"  <?php language_attributes(); ?>>     <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" <?php language_attributes(); ?>>     <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" <?php language_attributes(); ?>>     <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" <?php language_attributes(); ?>>     <![endif]-->
+<html <?php language_attributes(); ?>>
 <head>
 
 <title><?php global $page, $paged; wp_title( '-', true, 'right' ); bloginfo( 'name' ); $site_description = get_bloginfo( 'description', 'display' ); if ( $site_description && ( is_home() || is_front_page() ) ) echo " | $site_description"; if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );	?></title>

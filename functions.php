@@ -149,8 +149,6 @@ if ( ! function_exists( 'wordpress_boilerplate_setup' ) ):
 	   return (str_replace(home_url().'/', "/", $buffer)); 
 	}
 
-	add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
-
 	// Resumo nas páginas
 	add_action( 'init', 'my_add_excerpts_to_pages' );
 	function my_add_excerpts_to_pages() {
