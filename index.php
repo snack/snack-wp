@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-   <div class="container">
-      
-   </div>
+    <main role="main">
+    </main>
 <?php get_footer(); ?>
+

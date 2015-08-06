@@ -1,0 +1,14 @@
+{
+  "name": "atlanticenergias",
+  "version": "1.0.0",
+  "homepage": "atlanticenergias.com.br",
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.x",
+    "modernizr": "~2.7.1",
+    "respond": "~1.4.2"
+  }
+}

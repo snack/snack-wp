@@ -1,0 +1,68 @@
+/*  ==========================================================================
+    Typography
+    ========================================================================== */
+
+    @media only screen {
+
+        body {
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust:none;
+            font-family: Merriweather, serif;
+        }
+
+        /*  Titles
+            ========================================================================== */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: Lato, sans-serif;
+                font-weight: 700;
+            }
+
+            .article-header {
+                .article-date {
+                    color: $color-primary-lighten;
+                }
+            }
+
+        /*  Texts
+            ========================================================================== */
+            p {
+                color: #666;
+                font-size: 16px;
+                line-height: 20px;
+                margin: 0 0 15px;
+                text-align: left;
+            }
+
+            article p {
+                color: #333;
+                line-height: 32px;
+                text-align: left;
+                + p {
+                    margin: 34px 0 0;
+                }
+            }
+
+        /*  Links
+            ========================================================================== */
+            a {
+             color: blue;
+             text-decoration: none;
+           }
+
+           a:hover { text-decoration: underline; }
+
+    }
+
+
+    /*
+     * CSS for devices with resolution bigger than breakpoint
+     */
+
+    @media only screen and (min-width: $breakpoint) {
+
+    }

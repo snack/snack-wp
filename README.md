@@ -1,54 +1,60 @@
-wordpress-boilerplate
-=====================
+# A2boilerplate
 
-Tema básico para iniciar um projeto em Wordpress baseado no [A2Boilerplate](http://https://github.com/a2comunicacao/A2boilerplate), e assim fazer as customizações de Menus, Widgets, Plugins, etc.
+Biblioteca para auxiliar no **pontapé inicial** em um projeto web. A idéia foi juntar [alguns dos projetos](https://github.com/a2comunicacao/Grid-A2/wiki/Refer%C3%AAncias) que mais utilizávamos como referência e adaptarmos para um modelo de desenvolvimento da A2 com um Guia de Estilo incluso. Entenda a idéia [aqui](https://github.com/a2comunicacao/Grid-A2/wiki).
 
-## Estrutura ##
+## Requisitos
 
-* [CSS](https://github.com/a2comunicacao/A2boilerplate#css)
-	* [SASS](https://github.com/a2comunicacao/A2boilerplate#sass)
-* IN
-	* `mobile_detect.php`
-	* `scripts.php`
-* [JS](#js)
-	* LIBS
-		* jQuery
-		* Modernizr
-		* Respond
-	* `scripts.js`
-* `header.php`
-* `footer.php`
-* `index.php`
-* `page.php`
-* `single.php`
-* `category.php`
-* `sidebar.php`
-* `functions.php`
+* NodeJS
+* Grunt ou Gulp
+* Ruby/SASS
+* Bower
+* PHP 5.4+*
 
+*Para o Styleguide.
 
+## Instalação
 
+### Começando
 
-## Como usar ##
+Existem algumas opções disponíveis:
 
-Clonar o repositório para a pasta de temas do wordpress: 
-> /wp-content/themes/
+* Faça o [download do zip](https://github.com/a2comunicacao/A2boilerplate/archive/master.zip) ou do [último release](https://github.com/a2comunicacao/A2boilerplate/releases)
+* Clone o projeto `git clone https://github.com/a2comunicacao/A2boilerplate.git`
 
-    git clone https://github.com/a2comunicacao/wordpress-boilerplate.git
+### Boilerplate
 
-## Adicionando novos templates de páginas ##
-Criar um novo arquivo dentro da pasta do tema, ex:  
-> `nome-do-template.php`
+Para instalar as bibliotecas do Grunt e Gulp:
 
-Adicionar o código abaixo no seu tmeplate:
+`npm install`
 
-    <?php     
-    	/* Template Name: Nome do template */    
-    	get_header();     
-    ?>
-    	//Conteúdo
-    <?
-		get_footer();
-	?>
+Para instalar todas as dependências: 
 
+`bower install`
 
+Para rodas as tarefas de inicialização do projeto usando _Grunt_:
 
+`grunt init`
+
+## Styleguide
+
+O styleguide utiliza algumas bibliotecas PHP que são gerenciadas utilizando o [Composer](https://getcomposer.org/). Para instalar as dependências rode o seguinte comando na raiz do projeto:
+
+`php composer.phar install`
+
+## Documentação
+
+Muita coisa? :confounded: Dá uma olhada na [documentação](doc/index.md) completa. Fica dentro da pasta `doc` na raiz do projeto.
+
+## Atualização
+
+**Esse é um projeto em constante atualização.** Pode ser que algo apresentado aqui não se adeque ao seu _workflow_. Fique a vontade para abrir uma [_issue_](https://github.com/a2comunicacao/A2boilerplate/issues) e vamos discuti-la. :metal:
+
+## Suporte
+
+Foi testado em diversos navegadores, mas como queremos que a web não pare no tempo, recomendamos você seguir a lista abaixo:
+
+- IE8+
+- Firefox 2+
+- Chrome 4+
+- Safari 3.1+
+- Opera 15
