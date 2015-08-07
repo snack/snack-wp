@@ -84,6 +84,15 @@
 
     * { @include box-sizing(); }
 
+    //Bugfix para o googlemaps
+    .googlemap img { max-width: inherit; }
+
+    //Normalize do css para texto com números de telefones/cep (Safari)
+    a[href^=tel] {
+        color: inherit;
+        text-decoration:none;
+    }
+
 /*  ==========================================================================
     Helper classes
     ========================================================================== */
