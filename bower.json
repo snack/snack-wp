@@ -1,7 +1,7 @@
 {
-  "name": "atlanticenergias",
+  "name": "Project Name",
   "version": "1.0.0",
-  "homepage": "atlanticenergias.com.br",
+  "homepage": "Project Url",
   "ignore": [
     "**/.*",
     "node_modules"
@@ -9,6 +9,7 @@
   "dependencies": {
     "jquery": "~1.11.x",
     "modernizr": "~2.7.1",
-    "respond": "~1.4.2"
+    "respond": "~1.4.2",
+    "font-awesome": "~4.3.0"
   }
 }
