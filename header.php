@@ -6,15 +6,36 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 
-<title><?php wp_title(""); ?></title>
+    <title><?php wp_title(""); ?></title>
 
-<!-- Metas -->
-<?php include __DIR__ . '/build/in/meta.php'; ?>
+    <!-- Metas -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Estilos -->
-<?php include __DIR__ . '/build/in/estilos.php'; ?>
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<?php wp_head(); ?>
+    <?php wp_head(); ?>
+
+    <!-- Html5 Tags && Media Queries -->
+    <!--[if lt IE 9]>
+        <script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/html5shiv_respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X','auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
 
 </head>
 <body <?php body_class(); ?>>
@@ -23,14 +44,13 @@
     <!-- Header -->
     <header class="header" role="banner">
         <div class="row">
-            <div class="fourcol">
-                <!-- Logo -->
-                <h1 class="logo">
-                    <a class="hover" href="<?php echo home_url( '/' ); ?>" title="Campanha">
-                        <img src="<?php echo get_template_directory_uri(); ?>/build/img/logo.png" alt="Logo Campanha">
-                    </a>
-                </h1>
-            </div>
+
+            <!-- Logo -->
+            <h1 class="logo">
+                <a class="hover" href="<?php echo home_url( '/' ); ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/logo.png" alt="">
+                </a>
+            </h1>
 
             <!-- Menu -->
             <nav aria-label="main navigation" role="navigation" class="navbar">
@@ -40,8 +60,7 @@
                         'container'         => '',
                         'container_class'   => '',
                         'menu_class'        => 'nav-menu',
-                        'items_wrap'        => '<ul class="%2$s" role="menubar" id="main-menu">%3$s</ul>',
-                        'walker'            => new custom_menu()
+                        'items_wrap'        => '<ul class="%2$s" role="menubar" id="main-menu">%3$s</ul>'
                         );
                     wp_nav_menu( $args );
                 ?>
