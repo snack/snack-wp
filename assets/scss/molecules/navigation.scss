@@ -2,6 +2,10 @@
     Navigation
     ========================================================================== */
 
+    /*
+     * CSS for all devices
+     */
+
     @media only screen {
 
         /*  Header
@@ -9,58 +13,63 @@
 
         /*  Footer
             ========================================================================== */
-            .back-top {
-                text-transform: uppercase;
-                font: 11px sans-serif;
-                letter-spacing: 0.5px;
-                a {
-                    color: $color-secondary-lighten;
-                }
-            }
+
         /*  Menu
             ========================================================================== */
-            /* Aside Nav */
-            .aside-title {
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                font-size: 14px;
-                color: $color-primary-darken;
-                padding: 0 12px;
+
+        /*  Tabs
+            ========================================================================== */
+            .tablist-menu {
+                padding: 20px;
             }
-            .aside-nav {
-                width: 100%;
-                padding: 0;
-                .nav-item {
-                    display: block;
-                    .related-tag & {
-                        border-top: 1px solid #ddd;
-                        border-bottom: 1px solid #ddd;
-                    }
-                    + .nav-item {
-                        border-top: 0;
-                        .see-too & {
-                            border-top: 1px dotted #ccc;
-                            border-bottom: 0;
-                        }
-                    }
-                    a {
-                        display: block;
-                        padding: 10px 12px;
-                        color: $color-secondary-darken;
-                    }
-                    img {
-                        margin: 2px 0 3px;
-                        width: 100%;
-                    }
+
+            .tabscroll-responsive { overflow-x: auto; }
+
+            [role="tablist"] {
+                padding-left: 0;
+                margin: 6px 0 0;
+                list-style-type: none;
+                @include clearfix;
+                > [role="presentation"] {
+                    float: left;
                 }
             }
-    }
+
+            [role="tablist"] [role="tab"] {
+                display: block;
+                padding: 12px;
+                background-color: $color-primary;
+                color: #fff;
+                text-decoration: none;
+                &[aria-selected="false"]:hover {
+                    background-color: lighten($color-primary, 5%);;
+                }
+                &[aria-selected="true"] {
+                    background-color: #fff;
+                    padding: 13px 12px;
+                    color: $color-primary;
+                    border-top: 4px solid;
+                    margin-top: -6px;
+                }
+            }
+
+            [role="tabpanel"] {
+                background: #fff;
+                width: 100%;
+                display: inline-block;
+                padding: 20px 16px 8px;
+                &[aria-hidden="true"] {
+                    display:none;
+                    visibility:hidden;
+                }
+            }
+        }
 
     /*
-     * CSS for devices with resolution bigger than breakpoint
+     * CSS for devices with resolution up to a maximum of breakpoint
      */
 
-    @media only screen and (min-width: $breakpoint) {
+    @media only screen and (max-width: $breakpoint) {
 
         /*  Header
             ========================================================================== */
@@ -71,4 +80,21 @@
         /*  Menu
             ========================================================================== */
 
-   }
+        }
+
+    /*
+     * CSS for devices with resolution up to the minimum breakpoint
+     */
+
+    @media only screen and (min-width: $breakpoint+1) {
+
+        /*  Header
+            ========================================================================== */
+
+        /*  Footer
+            ========================================================================== */
+
+        /*  Menu
+            ========================================================================== */
+
+    }

@@ -2,6 +2,10 @@
     Buttons
     ========================================================================== */
 
+    /*
+     * CSS for all devices
+     */
+
     @media only screen {
 
         /*  Default
@@ -16,14 +20,8 @@
                 border: 1px solid transparent;
                 white-space: nowrap;
                 font-size: $btn-font-size;
-                padding: 10px 20px 12px;
+                padding: 6px 12px;
                 @include transition(background 0.25s ease);
-                font-family: Lato, sans-serif;
-                line-height: 1.4;
-                font-weight: 700;
-                text-transform: uppercase;
-                @include border-radius(6px);
-                letter-spacing: 1px;
             }
 
             .btn:hover,
@@ -37,13 +35,6 @@
                 .btn {
                     background-color: $btn-bg;
                     color: $btn-color;
-                    &.btn-outline {
-                    background-color: transparent;
-                    border: 1px solid $btn-bg;
-                    color: $btn-bg;
-                        &:hover,
-                        &:focus { color: $btn-color; }
-                    }
                 }
 
                 .btn:hover,
@@ -81,47 +72,21 @@
 
         /*  Social Share
             ========================================================================== */
-            [class^="social-share"] {
-                padding-top: 45px;
-                position: relative;
-                padding: 0;
-                li {
-                    float: left;
-                    display: block;
-                    padding: 11px 11px;
-                    border: 1px solid #ccc;
-                    + li {
-                        border-left: 0;
-                    }
-                }
-            }
             .social-button{
-                @include border-radius(3px);
+                @include border-radius(2px);
                 @include transition(all .3s ease);
-                background-color: #bbb;
-                padding: 7px 3.5px 5px;
+                background-color: #666;
+                padding: 5px 10px;
                 font-family: "Arial";
                 font-weight: bold;
                 font-size: 11px;
                 line-height: 11px;
-                border-bottom: 1px solid #bbb;
+                border-bottom: 1px solid #444;
                 color: #fff;
                 text-align: center;
                 display: inline-block;
                 text-transform: uppercase;
-                .badge-small & {
-                    @include border-radius(100%);
-                    background-color: $color-secondary-lighten;
-                    border-color: $color-secondary-lighten;
-                    padding: 0;
-                    width: 36px;
-                    height: 36px;
-                    color: $color-secondary-darken;
-                    &:hover{
-                        background-color: $color-secondary;
-                        color: $color-secondary-lighten;
-                    }
-                }
+
                 > *{
                     display: inline-block;
                     vertical-align: middle;
@@ -129,18 +94,11 @@
 
                 /* icon font-awesome */
                 > i{
-                    font-size: 17px;
-                    line-height: 9px;
-                    margin: 0;
-                    width: 17px;
-                    text-indent: .5px;
-                    .social-small.badge-small & {
-                        font-size: 21px;
-                        line-height: 1.8;
-                        width: 23px;
-                        letter-spacing: -1px;
-                        text-indent: -1px;
-                    }
+                    letter-spacing: 5px;
+                    font-size: 20px;
+                    line-height: 20px;
+                    margin: 0 0 0 4px;
+                    width: 24px;
                 }
 
                 /* hover / focus */
@@ -177,17 +135,64 @@
                 }
             }
 
-            .social-twitter {
-                background-color: transparent;
-                border-color: transparent;
-                color: #bbb;
-                i { font-size: 26px; text-indent: -2.5px; }
-                &:focus,
-                &:hover {
-                    background-color: transparent;
-                    border-color: transparent;
-                    box-shadow: none;
-                    color: #999;
+
+            /* facebook */
+            .social-facebook{
+                background-color: $color-social-facebook;
+                border-color: $border-social-facebook;
+
+                &:hover{
+                    background-color: $hover-social-facebook;
+                }
+            }
+
+            /* twitter */
+            .social-twitter{
+                background-color: $color-social-twitter;
+                border-color: $border-social-twitter;
+
+                &:hover{
+                    background-color: $hover-social-twitter;
+                }
+            }
+
+            /* google-plus */
+            .social-google-plus{
+                background-color: $color-social-google-plus;
+                border-color: $border-social-google-plus;
+
+                &:hover{
+                    background-color: $hover-social-google-plus;
+                }
+            }
+
+            /* linkedin */
+            .social-linkedin{
+                background-color: $color-social-linkedin;
+                border-color: $border-social-linkedin;
+
+                &:hover{
+                    background-color: $hover-social-linkedin;
+                }
+            }
+
+            /* pinterest */
+            .social-pinterest{
+                background-color: $color-social-pinterest;
+                border-color: $border-social-pinterest;
+
+                &:hover{
+                    background-color: $hover-social-pinterest;
+                }
+            }
+
+            /* rss */
+            .social-rss{
+                background-color: $color-social-rss;
+                border-color: $border-social-rss;
+
+                &:hover{
+                    background-color: $hover-social-rss;
                 }
             }
 
@@ -195,9 +200,18 @@
 
 
     /*
-     * CSS for devices with resolution bigger than breakpoint
+     * CSS for devices with resolution up to a maximum of breakpoint
      */
 
-    @media only screen and (min-width: $breakpoint) {
+    @media only screen and (max-width: $breakpoint) {
+
+    }
+
+
+    /*
+     * CSS for devices with resolution up to the minimum breakpoint
+     */
+
+    @media only screen and (min-width: $breakpoint+1) {
 
     }

@@ -1,68 +1,6 @@
 /*  ==========================================================================
     Base
     ========================================================================== */
-    /* Font - Merriweather*/
-        @font-face {
-            font-family: 'Merriweather';
-            font-style: normal;
-            font-weight: 400;
-            src: url('http://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EHZ2MAKAc2x4R1uOSeegc5U.eot');
-            src: local('Merriweather'), url('http://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EHZ2MAKAc2x4R1uOSeegc5U.eot') format('embedded-opentype'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EBampu5_7CjHW5spxoeN3Vs.woff2') format('woff2'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EKRDOzjiPcYnFooOUGCOsRk.woff') format('woff'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/RFda8w1V0eDZheqfcyQ4EInF5uFdDttMLvmWuJdhhgs.ttf') format('truetype'),
-                url('http://fonts.gstatic.com/l/font?kit=RFda8w1V0eDZheqfcyQ4EFlIn5tFQcqMuf-jhyJP0ps&skey=379c1eccf863c625#Merriweather') format('svg');
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-style: italic;
-            font-weight: 400;
-            src: url('http://fonts.gstatic.com/s/merriweather/v8/So5lHxHT37p2SS4-t60SlDoGYR7Z3iWH66EXnaJoKgg.eot');
-            src: local('Merriweather Italic'), local('Merriweather-Italic'), url('http://fonts.gstatic.com/s/merriweather/v8/So5lHxHT37p2SS4-t60SlDoGYR7Z3iWH66EXnaJoKgg.eot') format('embedded-opentype'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/So5lHxHT37p2SS4-t60SlGfrnYWAzH6tTbHZfcsRIsM.woff2') format('woff2'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/So5lHxHT37p2SS4-t60SlL52ooqJRs02xO3mONBoqeI.woff') format('woff'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/So5lHxHT37p2SS4-t60SlCtfYakCkPqOMDce0h_3gD8.ttf') format('truetype'),
-                url('http://fonts.gstatic.com/l/font?kit=So5lHxHT37p2SS4-t60SlH2UFnxWCzsMUZbVj2XRF5M&skey=899922b35e8afa66#Merriweather') format('svg');
-        }
-
-        @font-face {
-            font-family: 'Merriweather';
-            font-style: normal;
-            font-weight: 700;
-            src: url('http://fonts.gstatic.com/s/merriweather/v8/ZvcMqxEwPfh2qDWBPxn6nmmsoyWrDyoltQVIP7q_RGg.eot');
-            src: local('Merriweather Bold'), local('Merriweather-Bold'), url('http://fonts.gstatic.com/s/merriweather/v8/ZvcMqxEwPfh2qDWBPxn6nmmsoyWrDyoltQVIP7q_RGg.eot') format('embedded-opentype'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/ZvcMqxEwPfh2qDWBPxn6nshHwsiXhsDb0smKjAA7Bek.woff2') format('woff2'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff') format('woff'),
-                url('http://fonts.gstatic.com/s/merriweather/v8/ZvcMqxEwPfh2qDWBPxn6nn06qf9KHRHwsVx7iw5MXmY.ttf') format('truetype'),
-                url('http://fonts.gstatic.com/l/font?kit=ZvcMqxEwPfh2qDWBPxn6ngay50PuN8loMJ9QAXsTs7U&skey=76f88370d7055e09#Merriweather') format('svg');
-        }
-
-    /* Font - Lato*/
-        @font-face {
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 400;
-            src: url('http://fonts.gstatic.com/s/lato/v11/nQhiC-wSiJx0pvEuJl8d8A.eot');
-            src: local('Lato Regular'), local('Lato-Regular'), url('http://fonts.gstatic.com/s/lato/v11/nQhiC-wSiJx0pvEuJl8d8A.eot') format('embedded-opentype'),
-                url('http://fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2') format('woff2'),
-                url('http://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff') format('woff'),
-                url('http://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf') format('truetype'),
-                url('http://fonts.gstatic.com/l/font?kit=hLECvlEj3pKlnS4NFs8NQw&skey=2d58b92a99e1c086#Lato') format('svg');
-        }
-
-        @font-face {
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 700;
-            src: url('http://fonts.gstatic.com/s/lato/v11/sBtfDPlEIwvKKU53nAG7AQ.eot');
-            src: local('Lato Bold'), local('Lato-Bold'), url('http://fonts.gstatic.com/s/lato/v11/sBtfDPlEIwvKKU53nAG7AQ.eot') format('embedded-opentype'),
-                url('http://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2') format('woff2'),
-                url('http://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff') format('woff'),
-                url('http://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf') format('truetype'),
-                url('http://fonts.gstatic.com/l/font?kit=H4oiIt_Ug9TU5ast0nUT-w&skey=3480a19627739c0d#Lato') format('svg');
-        }
-
     ::-moz-selection {
         background: #666;
         text-shadow: none;
@@ -83,15 +21,6 @@
     img { height: auto; }
 
     * { @include box-sizing(); }
-
-    //Bugfix para o googlemaps
-    .googlemap img { max-width: inherit; }
-
-    //Normalize do css para texto com números de telefones/cep (Safari)
-    a[href^=tel] {
-        color: inherit;
-        text-decoration:none;
-    }
 
 /*  ==========================================================================
     Helper classes

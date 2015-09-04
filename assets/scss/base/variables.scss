@@ -6,7 +6,7 @@
         Grid
         ========================================================================== */
         $total-columns : 12; // Total of columns
-        $column-width  : 76px; // Columns width
+        $column-width  : 60px; // Columns width
         $gutter-width  : 20px; // Space between the columns
         $breath        : 20px; // Option of lateral space for grid
         $breakpoint    : 768px; // Breakpoint for small devices
@@ -15,18 +15,10 @@
     /*  ==========================================================================
         Colors
         ========================================================================== */
-
-        $color-primary: #159f4f;
-        $color-primary-darken: #04512e;
-        $color-primary-lighten: #a2c942;
-        $color-secondary: #15729f;
-        $color-secondary-darken: #053f59;
-        $color-secondary-lighten: #1da9e8;
-        $color-basic: #ccc;
-        $color-basic-darken: #000;
-        $color-basic-lighten: #f5f5f5;
-        $color-error: #bb1c16;
-        $color-alert: #d2cb00;
+        $color-default:     #eee;
+        $color-primary:     #1972D1;
+        $color-secondary:   #5CB85C;
+        $color-terciary:    #D9534F;
 
     /*  ==========================================================================
         Forms
@@ -51,7 +43,7 @@
 
             /*  Required field
                 ========================================================================== */
-                $color-required: $color-basic-lighten;
+                $color-required: #666;
                 $required-font-size: 12px;
 
     /*  ==========================================================================
@@ -64,26 +56,26 @@
 
             /*  Default
                 ========================================================================== */
-                $btn-bg: $color-secondary-lighten;
-                $btn-color: $color-basic-lighten;
+                $btn-bg: $color-default;
+                $btn-color: #666;
                 $btn-hover-bg: darken($btn-bg, 5%);
 
             /*  Primary
                 ========================================================================== */
-                $btn-success-bg: $color-primary;
-                $btn-success-color: $color-basic-lighten;
-                $btn-success-hover-bg: darken($btn-success-bg, 5%);
+                $btn-primary-bg: $color-primary;
+                $btn-primary-color: #fff;
+                $btn-primary-hover-bg: darken($btn-primary-bg, 5%);
 
             /*  Success
                 ========================================================================== */
-                $btn-primary-bg: $color-secondary;
-                $btn-primary-color: $color-basic-lighten;
-                $btn-primary-hover-bg: darken($btn-primary-bg, 5%);
+                $btn-success-bg: $color-secondary;
+                $btn-success-color: #fff;
+                $btn-success-hover-bg: darken($btn-success-bg, 5%);
 
             /*  Danger
                 ========================================================================== */
-                $btn-danger-bg: $color-error;
-                $btn-danger-color: $color-basic-lighten;
+                $btn-danger-bg: $color-terciary;
+                $btn-danger-color: #fff;
                 $btn-danger-hover-bg: darken($btn-danger-bg, 5%);
 
         /*  Social share
