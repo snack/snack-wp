@@ -46,11 +46,23 @@
         <div class="row">
 
             <!-- Logo -->
-            <h1 class="logo">
-                <a class="hover" href="<?php echo home_url( '/' ); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/build/img/logo.png" alt="">
-                </a>
-            </h1>
+            <?php if ( is_home() ) : ?>
+                <h1 class="site-title">
+                    <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                        <?php bloginfo( 'name' ); ?>
+                    </a>
+                </h1>
+                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <?php else : ?>
+                <div class="site-title">
+                    <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                        <?php bloginfo( 'name' ); ?>
+                    </a>
+                </div>
+                <div class="site-description">
+                    <?php bloginfo( 'description' ); ?>
+                </div>
+            <?php endif ?>
 
             <!-- Menu -->
             <nav aria-label="main navigation" role="navigation" class="navbar">
