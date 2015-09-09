@@ -18,7 +18,9 @@
 
             /*  Habilitar/Desabilitar barra de admin dos site
                 ========================================================================== */
-                show_admin_bar(true);
+                if ( is_user_logged_in() ){
+                    show_admin_bar(true);
+                }
 
             /*  Habilita Imagens e Thumbs Customizáveis
                 ========================================================================== */
