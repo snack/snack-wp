@@ -12,9 +12,11 @@
 
 
     @media only screen {
-        .container {
-            padding-left: 10px;
-            padding-right: 10px;
+        body{
+            > [role]{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
         }
 
         .row {
@@ -32,4 +34,20 @@
     @media only screen and (min-width: $breakpoint) {
         /* Grid calc */
         @import "grid-functions";
+
+        /*  Content
+            ========================================================================== */
+            .content{
+                @include width(9);
+                @extend %column;
+            }
+
+        /*  Sidebar
+            ========================================================================== */
+            .sidebar{
+                @include width(3);
+                @extend %column;
+                @extend %last;
+            }
+
    }

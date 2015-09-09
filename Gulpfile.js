@@ -185,7 +185,7 @@ var gulp 		= require('gulp'),
 	// BROWSER SYNC ------------------------------------------------------
     	gulp.task('browser-sync', function() {
             browserSync.init({
-                proxy: "local.snack"
+                proxy: "local.wordpress"
             });
     	});
 

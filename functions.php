@@ -16,9 +16,9 @@
                 ========================================================================== */
     		    add_editor_style();
 
-            /*  Remover barra de admin das paginas
+            /*  Habilitar/Desabilitar barra de admin dos site
                 ========================================================================== */
-                show_admin_bar(false);
+                show_admin_bar(true);
 
             /*  Habilita Imagens e Thumbs Customizáveis
                 ========================================================================== */
@@ -28,7 +28,7 @@
                 ========================================================================== */
         		//add_theme_support( 'title-tag' );
 
-            /*  Alterar tags padrão de formulário de busca, formulário de comentários, 
+            /*  Alterar tags padrão de formulário de busca, formulário de comentários,
              *  e comentários, para tags HTML5
                 ========================================================================== */
                 add_theme_support(
@@ -119,7 +119,7 @@
 	   return (str_replace(home_url().'/', "/", $buffer));
 	}
 
-/*  Formulário de Contato - Plugin Contact Form 7 
+/*  Formulário de Contato - Plugin Contact Form 7
  *  remover scripts, css e add class .form
     ========================================================================== */
 	add_filter( 'wpcf7_form_class_attr', 'snack_wp_form_class_attr' );
@@ -131,16 +131,12 @@
 
 	add_action( 'wp_print_scripts', 'snack_wp_remove_cf7_javascript', 34 );
 	function snack_wp_remove_cf7_javascript() {
-		/*if ( !is_page( $ID_DA_PAGINA ) ) {
-			wp_deregister_script( 'contact-form-7' );
-		}*/
+		wp_deregister_script( 'contact-form-7' );
 	}
 
 	add_action( 'wp_print_styles', 'snack_wp_remove_cf7_styles', 34 );
 	function snack_wp_remove_cf7_styles() {
-		/*if ( !is_page( $ID_DA_PAGINA ) ) {
-			wp_deregister_style( 'contact-form-7' );
-		}*/
+		wp_deregister_style( 'contact-form-7' );
 	}
 
 /*  Remover css de comentários do head
@@ -287,44 +283,6 @@
             return $output;
     }
 
-/*  Pagination (WordPress)
-    ========================================================================== */
-    function show_pagination_links($page_total){
-        if($page_total){
-            $page_tot = $page_total;
-        }else{
-            global $wp_query;
-            $page_tot = $wp_query->max_num_pages;
-        }
-
-
-        $page_cur = get_query_var( 'paged' );
-        $big = 999999999;
-
-        if ( $page_tot == 1 ) return;
-
-        $args = array(
-            'base'          => str_replace( $big, '%#%', get_pagenum_link( $big ) ), // need an unlikely integer cause the url can contains a number
-            'format'        => '?paged=%#%',
-            'current'       => max( 1, $page_cur ),
-            'total'         => $page_tot,
-            'prev_next'     => true,
-            'end_size'      => 1,
-            'mid_size'      => 2,
-            'prev_text'     => __('«'),
-            'next_text'     => __('»'),
-            'type'          => 'plain'
-        );
-
-        $values = paginate_links( $args );
-
-        if ( $args ) {
-           echo '<div class="box pagination">';
-           echo $values;
-           echo '</div><!--// end .pagination -->';
-        }
-    }
-
 /*  Add stylesheet URI
     ========================================================================== */
     function snack_wp_stylesheet_uri( $uri, $dir ) {
@@ -340,7 +298,7 @@
 
         // Carregar CSS
         wp_enqueue_style( 'snack-wp-style', get_stylesheet_uri(), array(), null, 'all' );
-        
+
         // Carregar Scripts
         wp_enqueue_script( 'snack-wp-script', $template_url . '/build/js/scripts.min.js', array(), null, true );
     }
@@ -382,3 +340,13 @@
     add_filter('pre_site_transient_update_core','remove_core_updates');
     add_filter('pre_site_transient_update_plugins','remove_core_updates');
     add_filter('pre_site_transient_update_themes','remove_core_updates');
+
+/**
+ * Core Helpers.
+ */
+require_once get_template_directory() . '/inc/helpers.php';
+
+/**
+ * WP Custom Admin.
+ */
+require_once get_template_directory() . '/inc/admin.php';
