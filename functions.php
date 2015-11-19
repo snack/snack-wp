@@ -131,15 +131,8 @@
 		return $class;
 	}
 
-	add_action( 'wp_print_scripts', 'snack_wp_remove_cf7_javascript', 34 );
-	function snack_wp_remove_cf7_javascript() {
-		wp_deregister_script( 'contact-form-7' );
-	}
-
-	add_action( 'wp_print_styles', 'snack_wp_remove_cf7_styles', 34 );
-	function snack_wp_remove_cf7_styles() {
-		wp_deregister_style( 'contact-form-7' );
-	}
+	add_filter( 'wpcf7_load_js', '__return_false' );
+    add_filter( 'wpcf7_load_css', '__return_false' );
 
 /*  Remover css de comentários do head
     ========================================================================== */
@@ -151,8 +144,8 @@
 
 /*  Galeria de Imagens customizada
     ========================================================================== */
-    add_shortcode('gallery', 'my_gallery_shortcode');
-    function my_gallery_shortcode($attr) {
+    add_shortcode('gallery', 'snack_gallery_shortcode');
+    function snack_gallery_shortcode($attr) {
         $post = get_post();
 
         static $instance = 0;
@@ -303,6 +296,12 @@
 
         // Carregar Scripts
         wp_enqueue_script( 'snack-wp-script', $template_url . '/build/js/scripts.min.js', array(), null, true );
+
+        // Carregar Scripts Contact Form 7
+        global $post;
+        if ( has_shortcode( $post->post_content, 'contact-form-7') ) {
+            wpcf7_enqueue_scripts();
+        }
     }
 
     add_action( 'wp_enqueue_scripts', 'snack_wp_enqueue_scripts' );
