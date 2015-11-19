@@ -77,10 +77,10 @@ function snack_pagination( $mid = 2, $end = 1, $show = false, $query = null ) {
  * @global array $post         WP global post.
  *
  * @param  string $display      Set category or tag.
- * @param  int    $qty          Number of posts to be displayed (default 5).
+ * @param  int    $qty          Number of posts to be displayed (default 4).
  * @param  string $title        Set the widget title.
- * @param  bool   $thumb        Enable or disable displaying images.
- * @param  string $post_type    Post type.
+ * @param  bool   $thumb        Enable or disable displaying images (default true).
+ * @param  string $post_type    Post type (default post).
  *
  * @return string              Related Posts.
  */
@@ -101,8 +101,8 @@ function snack_related_posts( $display = 'category', $qty = 4, $title = '', $thu
 				$show = true;
 
 				$tag_ids = array();
-				foreach ( $tags as $individual_tag ) {
-					$tag_ids[] = $individual_tag->term_id;
+				foreach ( $tags as $tag ) {
+					$tag_ids[] = $tag->term_id;
 				}
 
 				$args = array(
@@ -124,14 +124,14 @@ function snack_related_posts( $display = 'category', $qty = 4, $title = '', $thu
 				$show = true;
 
 				$category_ids = array();
-				foreach ( $categories as $individual_category ) {
-					$category_ids[] = $individual_category->term_id;
+				foreach ( $categories as $category ) {
+					$category_ids[] = $category->term_id;
 				}
 
 				$args = array(
 					'category__in' => $category_ids,
 					'post__not_in' => array( $post->ID ),
-					'showposts' => $post_qty,
+					'posts_per_page' => $post_qty,
 					'post_type' => $post_type,
 					'ignore_sticky_posts' => 1,
 				);
@@ -282,8 +282,15 @@ function snack_breadcrumbs( $homepage = '' ) {
 				$category = $category[0];
 				// Gets parent post terms.
 				$parent_cat = get_term( $category->parent, 'category' );
+                // Gets top term
+                $cat_tree = get_category_parents($category, FALSE, ':');
+                $top_cat = explode(':', $cat_tree);
+                $top_cat = $top_cat[0];
 
 				if ( $category->parent ) {
+                    if ( $parent_cat->parent ) {
+                        echo '<li><a href="' . get_term_link( $top_cat, 'category' ) . '">' . $top_cat . '</a></li>';
+                    }
 					echo '<li><a href="' . get_term_link( $parent_cat ) . '">' . $parent_cat->name. '</a></li>';
 				}
 
@@ -337,7 +344,10 @@ function snack_breadcrumbs( $homepage = '' ) {
 
 			// Displays parent category.
 			if ( 0 != $current_category->parent ) {
-				echo '<li>' . get_category_parents( $parent_category, TRUE, ' ' ) . '</li>';
+				$parents = get_category_parents( $parent_category, TRUE, false );
+                $parents = str_replace( '<a', '<li><a', $parents );
+                $parents = str_replace( '</a>', '</a></li>', $parents );
+                echo $parents;
 			}
 
 			printf( __( '%sCategory: %s%s', 'odin' ), $current_before, single_cat_title( '', false ), $current_after );
@@ -420,12 +430,7 @@ function snack_breadcrumbs( $homepage = '' ) {
 
 		// Gets pagination.
 		if ( get_query_var( 'paged' ) ) {
-
-			if ( is_archive() ) {
-				echo ' (' . sprintf( __( 'Page %s', 'odin' ), get_query_var( 'paged' ) ) . ')';
-			} else {
-				printf( __( 'Page %s', 'odin' ), get_query_var( 'paged' ) );
-			}
+            echo ' (' . sprintf( __( 'Page %s', 'odin' ), get_query_var( 'paged' ) ) . ')';
 		}
 
 		echo '</ol>';
@@ -529,6 +534,7 @@ function snack_autoset_featured() {
  */
 function snack_debug( $variable ) {
 	echo '<pre>' . print_r( $variable, true ) . '</pre>';
+    exit;
 }
 
 /**
