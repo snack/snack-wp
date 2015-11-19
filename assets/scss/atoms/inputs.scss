@@ -15,6 +15,7 @@
             input[type="search"],
             input[type="tel"],
             input[type="url"],
+            input[type="number"],
             input[type="date"],
             input[type="datetime"],
             input[type="datetime-local"],
@@ -37,6 +38,8 @@
                 @include transition(all .25s ease);
                 @include border-radius(2px);
             }
+
+            input[type="file"] { width: 100%; }
 
             input:focus,
             .input:focus,
@@ -154,6 +157,7 @@
             input[type="search"],
             input[type="tel"],
             input[type="url"],
+            input[type="number"],
             input[type="date"],
             input[type="datetime"],
             input[type="datetime-local"],
@@ -191,6 +195,7 @@
             input[type="search"],
             input[type="tel"],
             input[type="url"],
+            input[type="number"],
             input[type="date"],
             input[type="datetime"],
             input[type="datetime-local"],
