@@ -23,7 +23,7 @@
 
     <!-- Html5 Tags && Media Queries -->
     <!--[if lt IE 9]>
-        <script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/html5shiv_respond.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/html5shiv-respond.min.js"></script>
     <![endif]-->
 
     <script>
