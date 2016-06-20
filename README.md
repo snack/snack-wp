@@ -42,7 +42,7 @@ Mais detalhes de como contribuir e enviar Pull Requests em [GitHub Collaborating
 
 ## Changelog ##
 
-[Changelog aqui!](https://github.com/snack/snack-wp/blob/master/CHANGELOG.md)
+[Changelog aqui!](https://github.com/snack/snack-wp/releases)
 
 ## Copyright e Licença ##
 
