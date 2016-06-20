@@ -13,7 +13,7 @@ Envie a pasta **"snack-wp"** para a pasta de temas padrão do WordPress `wp-cont
 
 ## Documentação ##
 
-Informações de como usar as classes e funções do Odin na [Wiki](https://github.com/snack/snack-wp/wiki/)
+Informações de como usar as classes e funções do Snack WP na [Wiki](https://github.com/snack/snack-wp/wiki/)
 
 ## Suporte a plugins ##
 
