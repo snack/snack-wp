@@ -142,6 +142,15 @@
 	}
 	add_action( 'widgets_init', 'remove_recent_comments_style' );
 
+/*  Add semantic wrapper to post content function
+    ========================================================================== */
+    add_filter('the_content','wrap_content');
+
+    function wrap_content($content) {
+        $content = '<article class="post-article">'.$content.'</article>';
+        return $content;
+    }
+
 /*  Galeria de Imagens customizada
     ========================================================================== */
     add_shortcode('gallery', 'snack_gallery_shortcode');
@@ -341,6 +350,24 @@
     add_filter('pre_site_transient_update_core','remove_core_updates');
     add_filter('pre_site_transient_update_plugins','remove_core_updates');
     add_filter('pre_site_transient_update_themes','remove_core_updates');
+
+/*  Add Google Analytics UA-code field on General Settings
+    ========================================================================== */
+    $ga_code_setting = new ga_code_setting();
+
+    class ga_code_setting {
+        function ga_code_setting( ) {
+            add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+        }
+        function register_fields() {
+            register_setting( 'general', 'ga_ua_code', 'esc_attr' );
+            add_settings_field('fav_color', '<label for="ga_ua_code">'.__('GA UA-code' , 'ga_ua_code' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+        }
+        function fields_html() {
+            $value = get_option( 'ga_ua_code', '' );
+            echo '<input type="text" id="ga_ua_code" name="ga_ua_code" value="' . $value . '" />';
+        }
+    }
 
 /**
  * Core Helpers.
