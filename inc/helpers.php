@@ -558,7 +558,7 @@ function snack_get_term_meta( $term_id, $field ) {
 /**
  * Social share buttons
  */
-function snack_social_share($facebook = true, $twitter = true, $googleplus = true, $linkedin = true, $small = false){
+function snack_social_share($sharetitle = 'Compartilhe', $facebook = true, $twitter = true, $googleplus = true, $linkedin = true, $small = false){
 
     $permalink = get_permalink();
     $title     = get_the_title();
@@ -568,7 +568,7 @@ function snack_social_share($facebook = true, $twitter = true, $googleplus = tru
     }
 
     $html  = '<div class="social-share '.$classe.'">';
-    $html .= '<h3 class="compartilhar">Compartilhe</h3>';
+    $html .= ( $sharetitle ) ? '<h3 class="compartilhar">'.$sharetitle.'</h3>' : '';
 
     if ($facebook == true) {
         $html .= '<a href="'.$permalink.'" class="social-button social-facebook" alt="Compartilhar via Facebook" data-social="facebook" data-title="'.$title.'">';
