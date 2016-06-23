@@ -309,7 +309,13 @@
         // Carregar Scripts Contact Form 7
         global $post;
         if ( has_shortcode( $post->post_content, 'contact-form-7') ) {
-            wpcf7_enqueue_scripts();
+            wp_enqueue_script( 'wpcf7-jquery-form', wpcf7_plugin_url( 'includes/js/jquery.form.min.js' ), array(), WPCF7_VERSION, true );
+            wp_enqueue_script( 'wpcf7-scripts', wpcf7_plugin_url( 'includes/js/scripts.js' ), array(), WPCF7_VERSION, true );
+            $_wpcf7 = array(
+                'loaderUrl' => wpcf7_ajax_loader(),
+                'sending' => __( 'Enviando ...', 'wpcf7-scripts' )
+            );
+            wp_localize_script( 'wpcf7-scripts', '_wpcf7', $_wpcf7 );
         }
     }
 
