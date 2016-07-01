@@ -196,7 +196,13 @@ require_once get_template_directory() . '/inc/organisms/snack-related-posts.php'
         // Carregar Scripts Contact Form 7
         global $post;
         if ( has_shortcode( $post->post_content, 'contact-form-7') ) {
-            wpcf7_enqueue_scripts();
+            wp_enqueue_script( 'wpcf7-jquery-form', wpcf7_plugin_url( 'includes/js/jquery.form.min.js' ), array(), WPCF7_VERSION, true );
+            wp_enqueue_script( 'wpcf7-scripts', wpcf7_plugin_url( 'includes/js/scripts.js' ), array(), WPCF7_VERSION, true );
+            $_wpcf7 = array(
+                'loaderUrl' => wpcf7_ajax_loader(),
+                'sending' => __( 'Enviando ...', 'wpcf7-scripts' )
+            );
+            wp_localize_script( 'wpcf7-scripts', '_wpcf7', $_wpcf7 );
         }
     }
 
@@ -233,3 +239,45 @@ require_once get_template_directory() . '/inc/organisms/snack-related-posts.php'
     add_filter('pre_site_transient_update_themes','snack_remove_core_updates');
 
 
+/*  Add Google Analytics UA-code field on General Settings
+    ========================================================================== */
+    $ga_code_setting = new ga_code_setting();
+
+    class ga_code_setting {
+        function ga_code_setting( ) {
+            add_filter( 'admin_init' , array( &$this , 'register_fields' ) );
+        }
+        function register_fields() {
+            register_setting( 'general', 'ga_ua_code', 'esc_attr' );
+            add_settings_field('fav_color', '<label for="ga_ua_code">'.__('GA UA-code' , 'ga_ua_code' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+        }
+        function fields_html() {
+            $value = get_option( 'ga_ua_code', '' );
+            echo '<input type="text" id="ga_ua_code" name="ga_ua_code" value="' . $value . '" />';
+        }
+    }
+
+    add_action('wp_head','snack_ga_script', 10, 2);
+
+    function snack_ga_script() {
+
+        $ga_code = get_option("ga_ua_code");
+        $output  = '';
+
+        if ( $ga_code ):
+
+            $output="<script>
+                (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                e.src='https://www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+                ga('create','".$ga_code."','auto');
+                ga('require', 'displayfeatures');
+                ga('send', 'pageview');
+                </script>";
+
+        endif;
+
+        echo $output;
+    }

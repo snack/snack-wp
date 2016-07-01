@@ -6,6 +6,7 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?php echo get_template_directory_uri() ?>/favicon.ico">
     <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-144x144.png">
@@ -21,17 +22,6 @@
     <!--[if lt IE 9]>
         <script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/html5shiv-respond.min.js"></script>
     <![endif]-->
-
-    <script>
-    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-    e.src='https://www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-XXXXX-X','auto');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
-    </script>
 
 </head>
 <body <?php body_class(); ?>>
