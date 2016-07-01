@@ -5,5 +5,3 @@
 .idea
 .settings/
 /styleguide/lib/vendor
-/build/css/*
-/build/js/*

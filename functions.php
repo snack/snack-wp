@@ -6,127 +6,167 @@
  * @since 2.0
  */
 
-    add_action('after_setup_theme','snack_wp_setup' );
+/**
+ *  Setup theme.
+ */
+if ( ! function_exists( 'snack_setup' ) ):
 
-    if ( ! function_exists( 'snack_wp_setup' ) ):
+    function snack_setup() {
 
-    	function snack_wp_setup() {
+        //  Add support for multiple languages.
 
-    		/*  Habilita o editor visual
-                ========================================================================== */
-    		    add_editor_style();
+            load_theme_textdomain( 'snack-wp', get_template_directory() . '/languages' );
 
-            /*  Habilitar/Desabilitar barra de admin dos site
-                ========================================================================== */
-                if ( is_user_logged_in() ){
-                    show_admin_bar(true);
-                }
+        //  Habilita o editor visual
 
-            /*  Habilita Imagens e Thumbs Customizáveis
-                ========================================================================== */
-                add_theme_support('post-thumbnails');
+            add_editor_style();
 
-            /*  Tag <title>
-                ========================================================================== */
-        		//add_theme_support( 'title-tag' );
+        //  Habilitar/Desabilitar barra de admin dos site
 
-            /*  Alterar tags padrão de formulário de busca, formulário de comentários,
-             *  e comentários, para tags HTML5
-                ========================================================================== */
-                add_theme_support(
-                    'html5',
-                    array(
-                        'search-form',
-                        'comment-form',
-                        'comment-list',
-                        'gallery',
-                        'caption'
-                    )
-                );
+            if ( is_user_logged_in() ){
+                show_admin_bar(true);
+            }
 
-            /*  Post Formats
-                ========================================================================== */
-                // add_theme_support( 'post-formats', array(
-                //     'aside',
-                //     'gallery',
-                //     'link',
-                //     'image',
-                //     'quote',
-                //     'status',
-                //     'video',
-                //     'audio',
-                //     'chat'
-                // ) );
+        //  Habilita Imagens e Thumbs Customizáveis
 
-            /*  Remove itens da função wp_head();
-                ========================================================================== */
-                remove_action('wp_head', 'feed_links', 2);
-                remove_action('wp_head', 'feed_links_extra', 3);
-                remove_action('wp_head', 'rsd_link');
-                remove_action('wp_head', 'wlwmanifest_link');
-                remove_action('wp_head', 'index_rel_link');
-                remove_action('wp_head', 'parent_post_rel_link');
-                remove_action('wp_head', 'start_post_rel_link');
-                remove_action('wp_head', 'adjacent_posts_rel_link');
-                remove_action('wp_head', 'check_and_publish_future_post');
-                remove_action('wp_head', 'wp_print_styles');
-                remove_action('wp_head', 'wp_generator');
-                remove_action('wp_head', 'rel_canonical');
-                remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-                remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-                remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-                remove_action( 'wp_print_styles', 'print_emoji_styles' );
-                remove_action( 'admin_print_styles', 'print_emoji_styles' );
+            add_theme_support('post-thumbnails');
 
-            /*  Novos formatos de thumbnaills
-                ========================================================================== */
-        		if ( function_exists( 'add_image_size' ) ) {
-        			//Adicionar aqui os novos formatos:
-                    //Ex: add_image_size('thumb-780x350', 780, 350, true);
-                    add_image_size('thumb-700x480', 700, 480, true);
-                    add_image_size('thumb-700x320', 700, 320, true);
-        			add_image_size('thumb-140x120', 140, 120, true);
-        		}
+        //  Tag <title>
 
-            /*  Resumo nas páginas
-                ========================================================================== */
-                add_post_type_support( 'page', 'excerpt' );
+            add_theme_support( 'title-tag' );
 
-            /*  Register Nav Menus
-                ========================================================================== */
-        		register_nav_menus( array(
-        			'primary' => 'Navegação Principal'
-        			//adicionar novos menus aqui
-        		));
+        //  Alterar tags padrão de formulário de busca, formulário de comentários,
+        //  e comentários, para tags HTML5
 
-            /*  Register Widgets
-                ========================================================================== */
-        		register_sidebar( array(
-        			'id' => 'widget',
-        			'name' => __( 'Widget' ),
-        			'description' => __( '1º Widget'),
-        			'before_widget' => '<li class="widget %s">',
-        			'after_widget' => '</li>',
-        			'before_title' => '<h3>',
-        			'after_title' => '</h3>',
-        		));
-    	}
+            add_theme_support(
+                'html5',
+                array(
+                    'search-form',
+                    'comment-form',
+                    'comment-list',
+                    'gallery',
+                    'caption'
+                )
+            );
 
-    endif; //End snack_wp_setup();
+        //  Post Formats
 
-/*  Habilitar links relativos - adicionar no header - ob_start("fix_links"); -
- *  e adicionar no footer - ob_end_flush(); -
+            // add_theme_support( 'post-formats', array(
+            //    'aside',
+            //    'gallery',
+            //    'link',
+            //    'image',
+            //    'quote',
+            //    'status',
+            //    'video',
+            //    'audio',
+            //    'chat'
+            // ) );*/
+
+        //  Remove itens da função wp_head();
+
+            remove_action('wp_head', 'feed_links', 2);
+            remove_action('wp_head', 'feed_links_extra', 3);
+            remove_action('wp_head', 'rsd_link');
+            remove_action('wp_head', 'wlwmanifest_link');
+            remove_action('wp_head', 'index_rel_link');
+            remove_action('wp_head', 'parent_post_rel_link');
+            remove_action('wp_head', 'start_post_rel_link');
+            remove_action('wp_head', 'adjacent_posts_rel_link');
+            remove_action('wp_head', 'check_and_publish_future_post');
+            remove_action('wp_head', 'wp_print_styles');
+            remove_action('wp_head', 'wp_generator');
+            remove_action('wp_head', 'rel_canonical');
+            remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+            remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+            remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+            remove_action( 'wp_print_styles', 'print_emoji_styles' );
+            remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+        //  Novos formatos de thumbnaills
+
+            if ( function_exists( 'add_image_size' ) ) {
+                //Adicionar aqui os novos formatos:
+                //Ex: add_image_size('thumb-780x350', 780, 350, true);
+                add_image_size('thumb-700x480', 700, 480, true);
+                add_image_size('thumb-700x320', 700, 320, true);
+                add_image_size('thumb-140x120', 140, 120, true);
+            }
+
+        //  Resumo nas páginas
+
+            add_post_type_support( 'page', 'excerpt' );
+
+        //  Register Nav Menus
+
+            register_nav_menus( array(
+                'primary' => __( 'Navegação Principal', 'snack-wp' )
+                //adicionar novos menus aqui
+            ));
+
+        //  Register Widgets
+
+            register_sidebar( array(
+                'id' => 'widget',
+                'name' => __( 'Primeiro Widget' ),
+                'description' => __( '1º Widget'),
+                'before_widget' => '<div class="widget %s">',
+                'after_widget' => '</div>',
+                'before_title' => '<h3>',
+                'after_title' => '</h3>',
+            ));
+    }
+
+endif; //End snack_setup();
+
+add_action('after_setup_theme','snack_setup' );
+
+/*
+ *  Atoms
+ */
+require_once get_template_directory() . '/inc/atoms/snack-pagination.php';
+require_once get_template_directory() . '/inc/atoms/snack-excerpt.php';
+require_once get_template_directory() . '/inc/atoms/snack-breadcrumbs.php';
+require_once get_template_directory() . '/inc/atoms/snack-debug.php';
+require_once get_template_directory() . '/inc/atoms/snack-social-share-buttons.php';
+require_once get_template_directory() . '/inc/atoms/snack-get-term-meta.php';
+require_once get_template_directory() . '/inc/atoms/snack-optimize.php';
+require_once get_template_directory() . '/inc/atoms/snack-get-image-url.php';
+require_once get_template_directory() . '/inc/atoms/snack-thumbnail.php';
+require_once get_template_directory() . '/inc/atoms/snack-custom-admin.php';
+
+/*
+ *  Molecules
+ */
+require_once get_template_directory() . '/inc/molecules/snack-post-type.php';
+require_once get_template_directory() . '/inc/molecules/snack-taxonomy.php';
+require_once get_template_directory() . '/inc/molecules/snack-metabox.php';
+require_once get_template_directory() . '/inc/molecules/snack-thumbnail-resizer.php';
+
+/*
+ *  Organisms
+ */
+require_once get_template_directory() . '/inc/organisms/snack-gallery.php';
+require_once get_template_directory() . '/inc/organisms/snack-related-posts.php';
+
+/*
+ *  Custom
+ */
+
+/*  Habilitar o funcionamento dos links no localhost
+ *  Adicionar no header: <?php ob_start("snack_fix_links"); ?>
+ *  E adicionar no footer: <?php ob_end_flush(); ?>
     ========================================================================== */
-	function fix_links($buffer){
+	function snack_fix_links($buffer){
 	   return (str_replace(home_url().'/', "/", $buffer));
 	}
 
 /*  Formulário de Contato - Plugin Contact Form 7
  *  remover scripts, css e add class .form
     ========================================================================== */
-	add_filter( 'wpcf7_form_class_attr', 'snack_wp_form_class_attr' );
+	add_filter( 'wpcf7_form_class_attr', 'snack_form_class_attr' );
 
-	function snack_wp_form_class_attr( $class ) {
+	function snack_form_class_attr( $class ) {
 		$class .= ' form';
 		return $class;
 	}
@@ -134,161 +174,17 @@
 	add_filter( 'wpcf7_load_js', '__return_false' );
     add_filter( 'wpcf7_load_css', '__return_false' );
 
-/*  Remover css de comentários do head
-    ========================================================================== */
-	function remove_recent_comments_style() {
-	   global $wp_widget_factory;
-	   remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-	}
-	add_action( 'widgets_init', 'remove_recent_comments_style' );
-
-/*  Galeria de Imagens customizada
-    ========================================================================== */
-    add_shortcode('gallery', 'snack_gallery_shortcode');
-    function snack_gallery_shortcode($attr) {
-        $post = get_post();
-
-        static $instance = 0;
-        $instance++;
-
-        if ( ! empty( $attr['ids'] ) ) {
-            // 'ids' is explicitly ordered, unless you specify otherwise.
-            if ( empty( $attr['orderby'] ) )
-                $attr['orderby'] = 'post__in';
-                $attr['include'] = $attr['ids'];
-        }
-
-        // Allow plugins/themes to override the default gallery template.
-        $output = apply_filters('post_gallery', '', $attr);
-        if ( $output != '' )
-            return $output;
-
-        // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
-        if ( isset( $attr['orderby'] ) ) {
-            $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
-            if ( !$attr['orderby'] )
-                unset( $attr['orderby'] );
-        }
-
-        extract(
-            shortcode_atts(
-                array(
-                    'order'      => 'ASC',
-                    'orderby'    => 'menu_order ID',
-                    'id'         => $post->ID,
-                    'itemtag'    => 'li',
-                    'icontag'    => '',
-                    'captiontag' => '',
-                    'columns'    => 3,
-                    'size'       => 'thumb-647x360',
-                    'include'    => '',
-                    'exclude'    => ''
-                ), $attr)
-        );
-
-        $id = intval($id);
-        if ( 'RAND' == $order )
-            $orderby = 'none';
-
-        if ( !empty($include) ) {
-            $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-
-            $attachments = array();
-            foreach ( $_attachments as $key => $val ) {
-                $attachments[$val->ID] = $_attachments[$key];
-            }
-        } elseif ( !empty($exclude) ) {
-            $attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-        } else {
-            $attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-        }
-
-        if ( empty($attachments) )
-            return '';
-
-        if ( is_feed() ) {
-            $output = "\n";
-            foreach ( $attachments as $att_id => $attachment )
-                $output .= wp_get_attachment_link($att_id, $size, true) . "\n";
-            return $output;
-        }
-
-        $itemtag = tag_escape($itemtag);
-        $captiontag = tag_escape($captiontag);
-        $icontag = tag_escape($icontag);
-        $valid_tags = wp_kses_allowed_html( 'post' );
-        if ( ! isset( $valid_tags[ $itemtag ] ) )
-            $itemtag = 'dl';
-        if ( ! isset( $valid_tags[ $captiontag ] ) )
-            $captiontag = 'dd';
-        if ( ! isset( $valid_tags[ $icontag ] ) )
-            $icontag = 'dt';
-
-        $columns = intval($columns);
-        $itemwidth = $columns > 0 ? floor(100/$columns) : 100;
-        $float = is_rtl() ? 'right' : 'left';
-
-        if ( apply_filters( 'use_default_gallery_style', true ) )
-            $size_class = sanitize_html_class( $size );
-            $i = 0;
-
-            $output .= '<div class="gallery loading"><div id="slideshow" class="flexslider slide-gallery">';
-                $output .= '<ul class="slides">';
-
-                foreach ( $attachments as $id => $attachment ) {
-                    //$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, false, false);
-                    $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_image($id, 'thumb-700x480') : wp_get_attachment_image($id, 'thumb-700x480');
-
-                    $meta = get_post_meta($id, 'credito_imagem', true);
-
-                    if ( $captiontag && trim($attachment->post_title) ) {
-
-                        /*echo "<pre>";
-                        print_r($attachment);
-                        echo "</pre>";*/
-
-                        $output .= '<li>';
-                            $output .= '<span class="credits">'.$meta.'</span>';
-                            $output .= $link;
-                            $output .= '<div class="legend">'.wptexturize($attachment->post_excerpt).'</div>';
-                        $output .= '</li>';
-
-                    }
-                }
-                $output .='</ul>';
-            $output .='</div>';
-            $output .='<div id="carousel" class="flexslider thumbs-gallery">';
-                $output .='<ul class="slides">';
-
-                    foreach ( $attachments as $id => $attachment ) {
-                        $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_image($id, 'thumb-140x120') : wp_get_attachment_image($id, 'thumb-140x120');
-
-                        if ( $captiontag && trim($attachment->post_title) ) {
-
-                            $output .='<li>';
-                               $output .= $link;
-                            $output .='</li>';
-
-                        }
-                    }
-
-                $output .='</ul>';
-            $output .='</div></div>';
-
-            return $output;
-    }
-
 /*  Add stylesheet URI
     ========================================================================== */
-    function snack_wp_stylesheet_uri( $uri, $dir ) {
+    function snack_stylesheet_uri( $uri, $dir ) {
         return $dir . '/build/css/main.min.css';
     }
 
-    add_filter( 'stylesheet_uri', 'snack_wp_stylesheet_uri', 10, 2 );
+    add_filter( 'stylesheet_uri', 'snack_stylesheet_uri', 10, 2 );
 
 /*  Add site scripts
     ========================================================================== */
-    function snack_wp_enqueue_scripts() {
+    function snack_enqueue_css_and_scripts() {
         $template_url = get_template_directory_uri();
 
         // Carregar CSS
@@ -304,11 +200,11 @@
         }
     }
 
-    add_action( 'wp_enqueue_scripts', 'snack_wp_enqueue_scripts' );
+    add_action( 'wp_enqueue_scripts', 'snack_enqueue_css_and_scripts' );
 
 /*  Desativar Widgets pré-definidos no WordPress
     ========================================================================== */
-    function unregister_default_wp_widgets() {
+    function snack_unregister_default_wp_widgets() {
         unregister_widget('WP_Widget_Pages');
         unregister_widget('WP_Widget_Calendar');
         unregister_widget('WP_Widget_Archives');
@@ -322,32 +218,18 @@
         unregister_widget('WP_Widget_RSS');
         unregister_widget('WP_Widget_Tag_Cloud');
         unregister_widget('WP_Nav_Menu_Widget');
-    }
-    add_action('widgets_init', 'unregister_default_wp_widgets', 1);
-
-/*  Desativar Widgets pré-definidos nos Plugins
-    ========================================================================== */
-    function unregister_default_plugins_widgets() {
         unregister_widget('Akismet_Widget');
         unregister_widget('qTranslateXWidget');
     }
-    add_action('widgets_init', 'unregister_default_plugins_widgets');
+    add_action('widgets_init', 'snack_unregister_default_wp_widgets');
 
 /*  Remove update notifications admin panel
     ========================================================================== */
-    function remove_core_updates() {
+    function snack_remove_core_updates() {
         global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
     }
-    add_filter('pre_site_transient_update_core','remove_core_updates');
-    add_filter('pre_site_transient_update_plugins','remove_core_updates');
-    add_filter('pre_site_transient_update_themes','remove_core_updates');
+    add_filter('pre_site_transient_update_core','snack_remove_core_updates');
+    add_filter('pre_site_transient_update_plugins','snack_remove_core_updates');
+    add_filter('pre_site_transient_update_themes','snack_remove_core_updates');
 
-/**
- * Core Helpers.
- */
-require_once get_template_directory() . '/inc/helpers.php';
 
-/**
- * WP Custom Admin.
- */
-require_once get_template_directory() . '/inc/admin.php';

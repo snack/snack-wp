@@ -1,23 +1,19 @@
-<?php ob_start("fix_links"); ?>
+<?php ob_start("snack_fix_links"); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>    <html class="no-js ie7" <?php language_attributes(); ?>>     <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8" <?php language_attributes(); ?>>     <![endif]-->
 <!--[if IE 9]>    <html class="no-js ie9" <?php language_attributes(); ?>>     <![endif]-->
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
-
-    <title><?php wp_title(""); ?></title>
-
-    <!-- Metas -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" href="<?php echo get_template_directory_uri() ?>/favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon.png">
 
     <?php wp_head(); ?>
 
@@ -39,7 +35,7 @@
 
 </head>
 <body <?php body_class(); ?>>
-    <a href="#conteudo" class="sr-only go-content" tabindex="1" accesskey="1">Ir para conteúdo</a>
+    <a href="#conteudo" class="sr-only go-content" tabindex="1" accesskey="1"><?php _e( 'Ir para conteúdo', 'snack-wp' ); ?></a>
 
     <!-- Header -->
     <header class="header" role="banner">
