@@ -144,6 +144,7 @@ require_once get_template_directory() . '/inc/molecules/snack-post-type.php';
 require_once get_template_directory() . '/inc/molecules/snack-taxonomy.php';
 require_once get_template_directory() . '/inc/molecules/snack-metabox.php';
 require_once get_template_directory() . '/inc/molecules/snack-thumbnail-resizer.php';
+require_once get_template_directory() . '/inc/molecules/snack-comment-remover.php';
 
 /*
  *  Organisms
