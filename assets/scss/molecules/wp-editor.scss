@@ -1,0 +1,56 @@
+/*  ==========================================================================
+    WP Editor
+    ========================================================================== */
+
+    /*
+     * CSS for all devices
+     */
+
+    @media only screen {
+        .entry-content {
+            .alignright {
+                float: right;
+                margin: 6px 0 20px 20px;
+            }
+
+            .alignleft {
+                float: left;
+                margin: 6px 20px 20px 0;
+            }
+
+            .aligncenter {
+                clear: both;
+                display: block;
+                margin: 0 auto 28px;
+            }
+
+            .wp-caption {
+                max-width: 100%;
+                margin-bottom: 28px;
+            }
+
+            .wp-caption-text {
+                color: #777;
+                font-size: 13px;
+                line-height: 1.4;
+                padding-top: 6px;
+            }
+        }
+    }
+
+
+    /*
+     * CSS for devices with resolution up to a maximum of breakpoint
+     */
+
+    @media only screen and (max-width: $breakpoint) {
+
+    }
+
+    /*
+     * CSS for devices with resolution up to the minimum breakpoint
+     */
+
+    @media only screen and (min-width: $breakpoint+1) {
+
+    }

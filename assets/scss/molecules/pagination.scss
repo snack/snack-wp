@@ -1,0 +1,107 @@
+/*  ==========================================================================
+    Pagination
+    ========================================================================== */
+
+    /*
+     * CSS for all devices
+     */
+
+    @media only screen {
+
+        .pagination{
+
+            > *{
+                display: inline-block;
+                vertical-align: middle;
+                border: 1px solid $color-primary;
+                font-weight: 700;
+                color: $color-primary;
+
+                &:hover,
+                &:focus{
+                    text-decoration: none;
+                    background-color: lighten($color-primary, 45%);
+                }
+
+                &.current{
+                    color: #fff;
+                    background-color: $color-primary;
+                }
+
+                &.dots{
+                    border:none;
+                }
+            }
+        }
+
+    }
+
+    /*
+     * CSS for Extra small devices (phones, less than 768px)
+     */
+
+    @media (max-width: $breakpoint - 1) {
+
+        .pagination{
+            padding: 5px 0;
+            margin-top: 10px;
+
+            > *{
+                font-size: 14px;
+                line-height: 14px;
+                padding: 6px 8px;
+
+                &.next,
+                &.prev{
+                    font-size: 12px;
+                }
+            }
+        }
+
+    }
+
+    /* Custom form menu mobile */
+    @media (max-width: $breakpoint-medium) {
+
+    }
+
+    /*
+     * CSS for Small devices (tablets, 768px and up)
+     */
+
+    @media (min-width: $breakpoint) {
+        .pagination{
+            padding: 10px 0;
+            margin-top: 20px;
+
+            > *{
+                font-size: 18px;
+                line-height: 18px;
+                padding: 10px 12px;
+
+                &.next,
+                &.prev{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    /*
+     * CSS for Medium devices (desktops, 992px and up)
+     */
+
+    @media (min-width: $breakpoint-medium) {
+
+    }
+
+    /*
+     * CSS for Large devices (large desktops, 1200px and up)
+     */
+
+    @media (min-width: $breakpoint-large) {
+
+    }
+
+
+

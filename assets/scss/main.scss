@@ -17,8 +17,11 @@
 
 /* Molecules
     ========================================================================== */
+    @import "molecules/wp-editor";
     @import "molecules/forms";
     @import "molecules/navigation";
+    @import "molecules/pagination";
+    @import "molecules/breadcrumbs";
     @import "molecules/icons";
 
 /* Organisms

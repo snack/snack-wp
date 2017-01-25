@@ -1,0 +1,62 @@
+/*  ==========================================================================
+    Pagination
+    ========================================================================== */
+
+    /*
+     * CSS for all devices
+     */
+
+    @media only screen {
+
+        .breadcrumbs {
+            padding: 20px 0;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            line-height: 16px;
+            color: #666;
+        }
+
+    }
+
+    /*
+     * CSS for Extra small devices (phones, less than 768px)
+     */
+
+    @media (max-width: $breakpoint - 1) {
+
+
+    }
+
+    /* Custom form menu mobile */
+    @media (max-width: $breakpoint-medium) {
+
+    }
+
+    /*
+     * CSS for Small devices (tablets, 768px and up)
+     */
+
+    @media (min-width: $breakpoint) {
+
+    }
+
+    /*
+     * CSS for Medium devices (desktops, 992px and up)
+     */
+
+    @media (min-width: $breakpoint-medium) {
+
+    }
+
+    /*
+     * CSS for Large devices (large desktops, 1200px and up)
+     */
+
+    @media (min-width: $breakpoint-large) {
+
+    }
+
+
+
