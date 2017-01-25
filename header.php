@@ -1,4 +1,3 @@
-<?php ob_start("snack_fix_links"); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>    <html class="no-js ie7" <?php language_attributes(); ?>>     <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8" <?php language_attributes(); ?>>     <![endif]-->
@@ -29,8 +28,7 @@
 
     <!-- Header -->
     <header class="header" role="banner">
-        <div class="row">
-
+        <div class="container-fluid">
             <!-- Logo -->
             <?php if ( is_home() ) : ?>
                 <h1 class="site-title">

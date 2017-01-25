@@ -155,14 +155,6 @@ require_once get_template_directory() . '/inc/organisms/snack-related-posts.php'
  *  Custom
  */
 
-/*  Habilitar o funcionamento dos links no localhost
- *  Adicionar no header: <?php ob_start("snack_fix_links"); ?>
- *  E adicionar no footer: <?php ob_end_flush(); ?>
-    ========================================================================== */
-	function snack_fix_links($buffer){
-	   return (str_replace(home_url().'/', "/", $buffer));
-	}
-
 /*  Formulário de Contato - Plugin Contact Form 7
  *  remover scripts, css e add class .form
     ========================================================================== */
