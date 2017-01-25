@@ -91,7 +91,6 @@ if ( ! function_exists( 'snack_setup' ) ):
                 //Adicionar aqui os novos formatos:
                 //Ex: add_image_size('thumb-780x350', 780, 350, true);
                 add_image_size('thumb-700x480', 700, 480, true);
-                add_image_size('thumb-700x320', 700, 320, true);
                 add_image_size('thumb-140x120', 140, 120, true);
             }
 
