@@ -201,9 +201,10 @@ require_once get_template_directory() . '/inc/organisms/snack-related-posts.php'
             wp_enqueue_script( 'wpcf7-jquery-form', wpcf7_plugin_url( 'includes/js/jquery.form.min.js' ), array(), WPCF7_VERSION, true );
             wp_enqueue_script( 'wpcf7-scripts', wpcf7_plugin_url( 'includes/js/scripts.js' ), array(), WPCF7_VERSION, true );
             $_wpcf7 = array(
-                'loaderUrl' => wpcf7_ajax_loader(),
-                'sending' => __( 'Enviando ...', 'wpcf7-scripts' )
-            );
+                'recaptcha' => array(
+                    'messages' => array(
+                        'empty' => __( 'Please verify that you are not a robot.',
+                            'contact-form-7' ) ) ) );
             wp_localize_script( 'wpcf7-scripts', '_wpcf7', $_wpcf7 );
         }
     }
