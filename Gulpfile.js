@@ -89,6 +89,13 @@ var gulp 		= require('gulp'),
 				cssName: 'icons.scss',
 				cssFormat: 'scss',
 				algorithm: 'binary-tree',
+                cssVarMap: function (sprite) {
+                    if(sprite.name.indexOf('-hover') !== -1){
+                        sprite.name = 'a:hover .ico-'+sprite.name;
+                    } else {
+                        sprite.name = '.ico-'+sprite.name;
+                    }
+                },
 				cssTemplate: dirs._assets+'/scss/molecules/icons.mustache'
 			}));
 			spriteData.img.pipe(gulp.dest(dirs._build+'/img/sprite/'));
