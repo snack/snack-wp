@@ -151,7 +151,6 @@ var gulp 		= require('gulp'),
 
 			// scripts.min.js
 			gulp.src([
-    				dirs._build+'/js/libs/jquery.min.js', // jQuery Lib
     				dirs._assets+'/js/scripts.js'
 				])
     		    .pipe(plugins.concat('scripts.js'))
@@ -167,7 +166,7 @@ var gulp 		= require('gulp'),
                     dirs._build+'/js/libs/jquery.min.js', // jQuery Lib
                     dirs._assets+'/js/scripts.js'
                 ])
-                .pipe(plugins.concat('scripts.jquery.js'))
+                .pipe(plugins.concat('scripts.full.js'))
                 .pipe(gulp.dest(dirs._build+"/js"))
                 .pipe(plugins.rename({suffix: ".min"}))
                 .pipe(plugins.uglify())
