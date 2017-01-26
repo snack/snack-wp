@@ -16,6 +16,38 @@
 
         /*  Menu
             ========================================================================== */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                &:hover .dropdown-menu,
+                &:focus .dropdown-menu {
+                    @include opacity(1);
+                    visibility: visible;
+                }
+
+                .dropdown-menu {
+                    @include border-radius(6px);
+                    @include box-shadow(0 0 2px 0 rgba(0,0,0,0.1));
+                    @include transition(opacity 0.2s ease,visibility 0.2s ease);
+                    min-width: 200px;
+                    position: absolute;
+                    z-index: 2;
+                    top: 100%;
+                    left: 0;
+                    background: #fff;
+                    margin-bottom: 0;
+                    margin-top: 2px;
+                    border: 1px solid #ccc;
+                    border: 1px solid rgba(0,0,0,0.15);
+                    @include opacity(0);
+                    visibility: hidden;
+                    text-align: left;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 20px;
+                    padding: 5px 0;
+                }
+            }
 
         /*  Tabs
             ========================================================================== */

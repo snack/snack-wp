@@ -19,12 +19,70 @@
                 }
             }
 
+            .form-group {
+                position: relative;
+                &.form-helper {
+                    margin-bottom: 8px;
+                }
+            }
+
+            .form-legend {
+                margin-bottom: 20px;
+            }
+
             .form-label {
                 display: inline-block;
                 color: $color-required;
                 font-size: $required-font-size;
                 line-height: 14px;
                 margin-bottom: 4px;
+                font-weight: bold;
+            }
+
+            .help-block {
+                font-size: 13px;
+                margin-top: -14px;
+                line-height: 1;
+                padding-left: 1px;
+                display: block;
+            }
+
+        /*  Alerts
+            ========================================================================== */
+            span[class*="alert-"]{
+                display: block;
+                font-size: 16px;
+                line-height: 20px;
+                padding: 15px 20px;
+
+                + [class*="alert-"]{
+                    margin-top: 10px;
+                }
+            }
+
+            .wpcf7-response-output {
+                padding: 10px;
+                margin-top: 20px;
+            }
+
+            .alert-danger {
+                background-color: $color-danger-light;
+                color: $color-danger;
+            }
+
+            .alert-warning {
+                background-color: $color-warning-light;
+                color: $color-warning;
+            }
+
+            .alert-success {
+                background-color: $color-success-light;
+                color: $color-success;
+            }
+
+            .alert-info {
+                background-color: $color-info-light;
+                color: $color-info;
             }
 
         /*  Required tip
@@ -45,7 +103,88 @@
                 color: $color-required;
                 font-size: $required-font-size;
             }
+        
+        /*  WPCF 7
+            ========================================================================== */
+            .wpcf7-response-output {
+                padding: 10px;
+                margin-top: 20px;
+            }
 
+            .wpcf7-validation-errors {
+                background-color: $color-danger-light;
+                color: $color-danger;
+            }
+
+            .wpcf7-mail-sent-ng {
+                background-color: $color-warning-light;
+                color: $color-warning;
+            }
+
+            .wpcf7-mail-sent-ok {
+                background-color: $color-success-light;
+                color: $color-success;
+            }
+
+            .wpcf7-spam-blocked {
+                background-color: $color-info-light;
+                color: $color-info;
+            }
+
+            .screen-reader-response {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0 0 0 0);
+                border: 0;
+            }
+
+            .wpcf7-form-control-wrap {
+                position: relative;
+                display: block;
+            }
+
+            .wpcf7-not-valid-tip {
+                position: absolute;
+                top: 2px;
+                right: 4px;
+                font-size: 12px;
+                color: $color-danger;
+                text-align: right;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                width: 100%;
+                max-width: 102px;
+            }
+
+            .wpcf7 br,
+            .wpcf7 p:empty {
+                display: none;
+            }
+
+            .wpcf7-display-none {
+                display: none;
+            }
+
+            div.wpcf7 .ajax-loader {
+                visibility: hidden;
+                display: inline-block;
+                background-image: url('../img/ajax-loader.gif');
+                width: 16px;
+                height: 16px;
+                border: none;
+                padding: 0;
+                margin: 0 0 0 4px;
+                vertical-align: middle;
+            }
+
+            div.wpcf7 .ajax-loader.is-active {
+                visibility: visible;
+            }
     }
 
 

@@ -20,36 +20,53 @@
     /*  ==========================================================================
         Colors
         ========================================================================== */
-        $color-default:     #eee;
+        /* Brand */
         $color-primary:     #1972D1;
         $color-secondary:   #5CB85C;
-        $color-terciary:    #D9534F;
+        $color-tertiary:    #D9534F;
 
-    /*  ==========================================================================
-        Forms
+        /* Default */
+        $color-white:         #f6f6f6;
+        $color-gray-lightest: #EEE;
+        $color-gray-light:    #CCC;
+        $color-gray:          #999;
+        $color-gray-dark:     #666;
+        $color-gray-darkest:  #333;
+        $color-black:         #222;
+        $color-default:       $color-gray;
+
+        /* Alert */
+        $color-info:          #457eaf;
+        $color-info-light:    #cfe6f7;
+        $color-warning:       #f79303;
+        $color-warning-light: #fff4c6;
+        $color-success:       #24a78c;
+        $color-success-light: #c6eed7;
+        $color-danger:        #e74c3c;
+        $color-danger-light:  #f4ceca;
+
+    /*  Forms
         ========================================================================== */
-        $color-bg-form: #f7f7f7;
-        $color-border-form: #ddd;
 
         /*  Inputs
             ========================================================================== */
-            $color-border-input: #DADFE1;
-            $color-input: #6C7A89;
+            $color-border-input: $color-gray-light;
+            $color-input: $color-gray-darkest;
 
             /*  Placeholder
                 ========================================================================== */
                 $placeholder-font-size: 14px;
-                $color-placeholder: #BFBFBF;
+                $color-placeholder: $color-gray;
 
             /*  Required tip
                 ========================================================================== */
-                $color-required-tip: #6C7A89;
-                $required-tip-font-size: 12px;
+                $color-required-tip: $color-gray-dark;
+                $required-tip-font-size: 14px;
 
             /*  Required field
                 ========================================================================== */
-                $color-required: #6C7A89;
-                $required-font-size: 12px;
+                $color-required: $color-gray-darkest;
+                $required-font-size: 14px;
 
     /*  ==========================================================================
         Buttons
@@ -73,13 +90,13 @@
 
             /*  Success
                 ========================================================================== */
-                $btn-success-bg: $color-secondary;
+                $btn-success-bg: $color-success;
                 $btn-success-color: #fff;
                 $btn-success-hover-bg: darken($btn-success-bg, 5%);
 
             /*  Danger
                 ========================================================================== */
-                $btn-danger-bg: $color-terciary;
+                $btn-danger-bg: $color-danger;
                 $btn-danger-color: #fff;
                 $btn-danger-hover-bg: darken($btn-danger-bg, 5%);
 

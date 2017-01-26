@@ -11,6 +11,7 @@
         /*  Default inputs, selects and textareas
             ========================================================================== */
             input[type="text"],
+            input[type="email"],
             input[type="password"],
             input[type="search"],
             input[type="tel"],
@@ -47,7 +48,7 @@
             .select:focus,
             textarea:focus,
             .textarea:focus {
-                background-color: #F2F1EF;
+                background-color: $color-white;
                 outline-width: 0;
             }
 
@@ -107,12 +108,67 @@
                 margin: 4px 0 0;
             }
 
+        /*  Inputs actions
+            ========================================================================== */
+            .form-item-wrap{
+                display: block;
+                position: relative;
+
+                .fa{
+                    position: absolute;
+                    top: 15px;
+                    right: 20px;
+                    color: $color-gray;
+                }
+            }
+
+            .form-group,
+            input,
+            .input,
+            select,
+            .select,
+            textarea,
+            .textarea{
+
+                /* Success */
+                &.success,
+                &.success *{
+                    border-color: $color-success;
+                    color: $color-success;
+
+                    + .fa{
+                        color: $color-success;
+                    }
+                }
+
+                /* Error */
+                &.danger,
+                &.danger *{
+                    border-color: $color-danger;
+                    color: $color-danger;
+
+                    + .fa{
+                        color: $color-danger;
+                    }
+                }
+
+                /* Success */
+                &.warning,
+                &.warning *{
+                    border-color: $color-warning;
+                    color: $color-warning;
+
+                    + .fa{
+                        color: $color-warning;
+                    }
+                }
+            }
+
         /*  Placeholder
             ========================================================================== */
             input::-webkit-input-placeholder,
             textarea::-webkit-input-placeholder {
                 color: $color-placeholder;
-                font-style: italic;
                 opacity: 1;
                 font-size: $placeholder-font-size;
             }
@@ -120,7 +176,6 @@
             input:-moz-placeholder,
             textarea:-moz-placeholder {
                 color: $color-placeholder;
-                font-style: italic;
                 opacity: 1;
                 font-size: $placeholder-font-size;
             }
@@ -128,7 +183,6 @@
             input::-moz-placeholder,
             textarea::-moz-placeholder {
                 color: $color-placeholder;
-                font-style: italic;
                 opacity: 1;
                 font-size: $placeholder-font-size;
             }
@@ -136,7 +190,6 @@
             input:-ms-input-placeholder,
             textarea:-ms-input-placeholder {
                 color: $color-placeholder;
-                font-style: italic;
                 opacity: 1;
                 font-size: $placeholder-font-size;
             }
@@ -153,6 +206,7 @@
         /*  Default inputs, selects and textareas
             ========================================================================== */
             input[type="text"],
+            input[type="email"],
             input[type="password"],
             input[type="search"],
             input[type="tel"],
@@ -191,6 +245,7 @@
         /*  Default inputs, selects and textareas
             ========================================================================== */
             input[type="text"],
+            input[type="email"],
             input[type="password"],
             input[type="search"],
             input[type="tel"],
@@ -210,11 +265,8 @@
             }
 
             input:focus,
-            .input:focus,
             select:focus,
-            .select:focus,
-            textarea:focus,
-            .textarea:focus {
+            textarea:focus {
                 border-color: darken($color-border-input, 25%);
             }
     }

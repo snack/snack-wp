@@ -28,23 +28,23 @@
             }
 
             h1{
-                font-size: 36px;
-                line-height: 40px;
+                font-size: 2.25em;
+                line-height: 1.125;
             }
 
             h2{
-                font-size: 30px;
-                line-height: 34px;
+                font-size: 1.875em;
+                line-height: 1.15;
             }
 
             h3{
-                font-size: 24px;
-                line-height: 28px;
+                font-size: 1.5em;
+                line-height: 1.175;
             }
 
             h4{
-                font-size: 18px;
-                line-height: 22px;
+                font-size: 1.125em;
+                line-height: 1.25;
             }
 
             h5{
@@ -60,11 +60,30 @@
         /*  Texts
             ========================================================================== */
             p {
-                color: #000000;
-                font-size: 16px;
-                line-height: 26px;
+                color: $color-black;
+                font-size: 1em;
+                line-height: 1.575;
                 margin: 0 0 30px;
-                text-align: left;
+            }
+
+        /*  Lists
+            ========================================================================== */
+            ul,
+            ol,
+            dl {
+                color: $color-black;
+                font-size: 16px;
+                font-size: 1rem;
+                line-height: 1.575;
+                margin: 0 0 30px;
+            }
+
+        /*  Blockquotes
+            ========================================================================== */
+            blockquote {
+                border-left: 6px solid $color-gray-light;
+                padding: 0 0 0 22px;
+                margin: 15px 20px;
             }
 
         /*  Links
