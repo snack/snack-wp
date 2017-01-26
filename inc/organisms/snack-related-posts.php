@@ -25,7 +25,7 @@ function snack_related_posts( $display = 'category', $qty = 4, $title = '', $thu
 
     $show = false;
     $post_qty = (int) $qty;
-    ! empty( $title ) || $title = __( 'Related Posts', 'odin' );
+    ! empty( $title ) || $title = __( 'Matérias Relacionadas', 'odin' );
 
     // Creates arguments for WP_Query.
     switch ( $display ) {
@@ -82,12 +82,12 @@ function snack_related_posts( $display = 'category', $qty = 4, $title = '', $thu
 
             $layout = '<div id="related-post">';
             $layout .= '<h3>' . esc_attr( $title ) . '</h3>';
-            $layout .= ( $thumb ) ? '<div class="row">' : '<ul>';
+            $layout .= ( $thumb ) ? '<div class="row">' : '<ul class="row">';
 
             while ( $related->have_posts() ) {
                 $related->the_post();
 
-                $layout .= ( $thumb ) ? '<div class="col-md-' . ceil( 12 / $qty ) . '">' : '<li>';
+                $layout .= ( $thumb ) ? '<div class="col-sm-6 col-md-' . ceil( 12 / $qty ) . '">' : '<li>';
 
                 if ( $thumb ) {
                     if ( has_post_thumbnail() ) {
