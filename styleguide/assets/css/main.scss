@@ -13,6 +13,37 @@
 
     @media only screen {
 
+        /*  Styleguide Header
+            ========================================================================== */
+            .styleguide-header{
+                height: 93.7vh;
+                width: 100%;
+                position: relative;
+                background-color: $color-primary;
+
+                .entry-brand {
+                    display: table;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    top: 0;
+                    bottom: 0;
+                    text-align: center;
+                    width: 100%;
+                }
+                /* Logo */
+                .brand{
+                    margin: auto;
+                }
+
+                /* Sub */
+                .subtitle{
+                    text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
+                    color: #fff;
+                }
+            }
+
         /*  Styleguide page
             ========================================================================== */
             .styleguide-page{
@@ -327,6 +358,37 @@
     }
 
     /*
+     * CSS for Small devices (tablets, 767px and up)
+     */
+
+    @media (max-width: 768px - 1) {
+
+        /*  Styleguide Header
+            ========================================================================== */
+            .styleguide-header{
+
+                /* Logo */
+                .brand{
+                    padding: 0 50px;
+                }
+
+                /* Sub */
+                .subtitle{
+                    margin: 20px 0 0;
+                    font-size: 32px;
+                    line-height: 32px;
+                }
+
+                /* Ir */
+                .ir{
+                    font-size: 24px;
+                    > .fa { margin-top: 10px; }
+                }
+            }
+
+    }
+
+    /*
      * CSS for Medium devices (desktops, 992px and up)
      */
 
@@ -335,44 +397,18 @@
         /*  Styleguide Header
             ========================================================================== */
             .styleguide-header{
-                height: 93.7vh;
-                width: 100%;
-                position: relative;
-
-                .entry-brand {
-                    height: 32vh;
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    margin: auto;
-                    top: 0;
-                    bottom: 0;
-                    min-height: 250px;
-                    text-align: center;
-                }
-                /* Logo */
-                .brand{
-                    margin: auto;
-                }
 
                 /* Sub */
                 .subtitle{
-                    margin: 60px 0 0;
+                    margin: 40px 0 0;
                     font-size: 52px;
                     line-height: 52px;
-                    text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
                 }
 
                 /* Ir */
                 .ir{
                     font-size: 32px;
-                    position: absolute;
-                    bottom: 0;
-
-                    &:hover,
-                    &:focus{
-                        font-size: 34px;
-                    }
+                    > .fa { margin-top: 20px; }
                 }
             }
 

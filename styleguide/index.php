@@ -32,7 +32,7 @@ require_once( $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php' );
     <header class="styleguide-header">
         <div class="entry-brand">
             <!-- Logo -->
-            <h1 class="brand"><img src="/wp-content/themes/desenvolvesp/build/img/logo.png"></h1>
+            <h1 class="brand"><img src="build/img/logo-brand.png"></h1>
 
             <!-- Subtítulo -->
             <h2 class="subtitle">Guia de Estilos</h2>
