@@ -14,17 +14,17 @@
  *
  * @return string       Return the pagination.
  */
-function snack_pagination( $mid = 2, $end = 1, $show = false, $query = null ) {
+function snack_pagination( $limit = null, $mid = 2, $end = 1, $show = false, $query = null ) {
 
     // Prevent show pagination number if Infinite Scroll of JetPack is active.
     if ( ! isset( $_GET[ 'infinity' ] ) ) {
 
         global $wp_query, $wp_rewrite;
 
-        $total_pages = $wp_query->max_num_pages;
+        $total_pages = $limit ? $limit : $wp_query->max_num_pages;
 
         if ( is_object( $query ) && null != $query ) {
-            $total_pages = $query->max_num_pages;
+            $total_pages = $limit ? $limit : $wp_query->max_num_pages;
         }
 
         if ( $total_pages > 1 ) {
@@ -41,8 +41,8 @@ function snack_pagination( $mid = 2, $end = 1, $show = false, $query = null ) {
                     'end_size'  => $end,
                     'mid_size'  => $mid,
                     'type'      => 'plain',
-                    'prev_text' => __( '&laquo; Previous', 'odin' ),
-                    'next_text' => __( 'Next &raquo;', 'odin' ),
+                    'prev_text' => __( '&laquo;', 'odin' ),
+                    'next_text' => __( '&raquo;', 'odin' ),
                 )
             );
 
