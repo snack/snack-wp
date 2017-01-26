@@ -21,10 +21,18 @@ function snack_pagination( $limit = null, $mid = 2, $end = 1, $show = false, $qu
 
         global $wp_query, $wp_rewrite;
 
-        $total_pages = $limit ? $limit : $wp_query->max_num_pages;
+        if ($wp_query->max_num_pages >= $limit) {
+            $total_pages = $limit ? $limit : $wp_query->max_num_pages;
+        } else {
+            $total_pages = $wp_query->max_num_pages;
+        }
 
         if ( is_object( $query ) && null != $query ) {
-            $total_pages = $limit ? $limit : $wp_query->max_num_pages;
+            if ($wp_query->max_num_pages >= $limit) {
+                $total_pages = $limit ? $limit : $wp_query->max_num_pages;
+            } else {
+                $total_pages = $wp_query->max_num_pages;
+            }
         }
 
         if ( $total_pages > 1 ) {
