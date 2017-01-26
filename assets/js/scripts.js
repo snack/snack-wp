@@ -3,7 +3,7 @@
 
     // Default scripts
     var app = {
-        socialButton:   document.querySelectorAll('.social-share .social-button')
+        socialButton:   document.querySelectorAll('.social-share .social-btn')
     };
 
     // Initial configs
