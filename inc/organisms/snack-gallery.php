@@ -46,7 +46,7 @@ function snack_gallery_shortcode($attr) {
                 'icontag'    => '',
                 'captiontag' => '',
                 'columns'    => 3,
-                'size'       => 'thumb-647x360',
+                'size'       => 'thumb-700x480',
                 'include'    => '',
                 'exclude'    => ''
             ), $attr)
