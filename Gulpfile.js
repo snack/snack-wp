@@ -116,7 +116,7 @@ var gulp 		= require('gulp'),
         //Style Guide
         gulp.task('sass_styleguide', function () {
 
-            return gulp.src(dirs._sg_assets+'/scss/main.scss')
+            return gulp.src(dirs._sg_assets+'/css/main.scss')
                 .pipe(plugins.rename({suffix: ".min"}))
                 .pipe(plugins.sass({
                     trace: true,
@@ -155,11 +155,26 @@ var gulp 		= require('gulp'),
                 .pipe(plugins.livereload())
     		    .pipe(reload({stream:true}));
 
-            // Styleguide js
+            // scripts.full.min.js
             gulp.src([
                     dirs._build+'/js/libs/jquery.min.js', // jQuery Lib
+                    dirs._assets+'/js/scripts.js'
+                ])
+                .pipe(plugins.concat('scripts.jquery.js'))
+                .pipe(gulp.dest(dirs._build+"/js"))
+                .pipe(plugins.rename({suffix: ".min"}))
+                .pipe(plugins.uglify())
+                .pipe(gulp.dest(dirs._build+"/js"))
+                .pipe(plugins.livereload())
+                .pipe(reload({stream:true}));
+
+            // Styleguide js
+            gulp.src([
+                    dirs._components+"/angular/angular.min.js", // AngularJS
+                    dirs._build+'/js/libs/jquery.min.js', // jQuery Lib
+                    dirs._components+'/rainbow/dist/rainbow.min.js', // Rainbow custom
+                    dirs._sg_assets+'/js/app.js',  // App
                     dirs._sg_assets+'/js/scripts.js', // Scripts
-                    dirs._sg_assets+'/js/libs/rainbow-custom.min.js', // Rainbow custom
                 ])
                 .pipe(plugins.concat('scripts.js'))
                 .pipe(gulp.dest(dirs._sg_build+"/js"))
@@ -205,7 +220,7 @@ var gulp 		= require('gulp'),
 
     		// watch CSS
             gulp.watch(dirs._assets+'/scss/**/*.scss', ['sass']);
-    		gulp.watch(dirs._sg_assets+'/scss/*.scss', ['sass_styleguide']);
+    		gulp.watch(dirs._sg_assets+'/css/*.scss', ['sass_styleguide']);
 
     		// watch IMAGES
     		gulp.watch([dirs._assets+'/img/*'], ['imagemin', 'svg2png']);
