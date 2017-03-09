@@ -1,6 +1,7 @@
 {
   "name": "nomedoprojeto",
   "version": "1.0.0",
+  "license": "MIT",
   "repository": "https://github.com/a2comunicacao/A2boilerplate",
   "title": "Titulo do projeto",
   "homepage": "http://www.urldoprojeto.com.br",
@@ -13,7 +14,6 @@
     "gulp-jshint": "^1.11.2",
     "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^0.10.0",
-    "gulp-raster": "^0.1.0",
     "gulp-rename": "^1.2.0",
     "gulp-replace": "^0.5.3",
     "gulp-ruby-sass": "^0.7.1",

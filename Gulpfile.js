@@ -74,14 +74,6 @@ var gulp 		= require('gulp'),
 		        .pipe(gulp.dest(dirs._build+'/img'));
 		});
 
-		//Svg2png
-		gulp.task('svg2png', function () {
-		    return gulp.src(dirs._assets+'/img/*.svg')
-		        .pipe(plugins.raster())
-		        .pipe(plugins.rename({extname: '.png'}))
-		        .pipe(gulp.dest(dirs._build+'/img'));
-		});
-
 		//Sprite
 		gulp.task('sprite', function () {
 			var spriteData = gulp.src(dirs._assets+'/img/sprite/*.png').pipe(plugins.spritesmith({
@@ -229,14 +221,14 @@ var gulp 		= require('gulp'),
     		gulp.watch(dirs._sg_assets+'/css/*.scss', ['sass_styleguide']);
 
     		// watch IMAGES
-    		gulp.watch([dirs._assets+'/img/*'], ['imagemin', 'svg2png']);
+    		gulp.watch([dirs._assets+'/img/*'], ['imagemin']);
     		gulp.watch([dirs._assets+'/img/sprite/*.png'], ['sprite']);
 
     	});
 
 	// RUN TASKS ---------------------------------------------------------
     	gulp.task('default', 	['watch', 'copy']);
-    	gulp.task('images',		['sprite', 'imagemin', 'svg2png']);
+    	gulp.task('images',		['sprite', 'imagemin']);
     	gulp.task('sync', 		['watch', 'browser-sync']);
     	gulp.task('css', 		['sass']);
         gulp.task('js',         ['lint', 'concat']);
