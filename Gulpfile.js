@@ -47,7 +47,7 @@ var gulp 		= require('gulp'),
             return gulp.src(dirs._components+'/normalize.css/normalize.css')
                         .pipe(plugins.replace('/*!', '/*'))
                         .pipe(plugins.rename('normalize.scss'))
-                        .pipe(gulp.dest(dirs._assets+'/scss/base'));
+                        .pipe(gulp.dest(dirs._assets+'/scss/3.generic'));
         });
 
         gulp.task('copy:font-awesome', function () {
@@ -58,7 +58,7 @@ var gulp 		= require('gulp'),
                         .pipe(plugins.replace('/*!', '/*'))
                         .pipe(plugins.replace('../fonts/', '../../build/fonts/font-awesome/'))
                         .pipe(plugins.rename('font-awesome.scss'))
-                        .pipe(gulp.dest(dirs._assets+'/scss/atoms/'));
+                        .pipe(gulp.dest(dirs._assets+'/scss/6.plugins/'));
         });
 
     // IMAGES ------------------------------------------------------------
@@ -88,10 +88,10 @@ var gulp 		= require('gulp'),
                         sprite.name = '.ico-'+sprite.name;
                     }
                 },
-				cssTemplate: dirs._assets+'/scss/molecules/icons.mustache'
+				cssTemplate: dirs._assets+'/scss/5.objects/icons.mustache'
 			}));
 			spriteData.img.pipe(gulp.dest(dirs._build+'/img/sprite/'));
-			spriteData.css.pipe(gulp.dest(dirs._assets+'/scss/molecules/'));
+			spriteData.css.pipe(gulp.dest(dirs._assets+'/scss/5.objects/'));
 		});
 
 	// STYLES ------------------------------------------------------------

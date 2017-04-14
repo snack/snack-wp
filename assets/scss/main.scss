@@ -1,30 +1,44 @@
-/* Start
+/* Settings
     ========================================================================== */
-    @import "base/normalize";
-    @import "base/mixins";
-    @import "base/variables";
-    @import "base/base";
+    @import "1.settings/variables";
 
-/* Atoms
+/* Tools
     ========================================================================== */
-    @import "bootstrap-grid/bootstrap-grid";
-    @import "atoms/font-awesome";
-    @import "atoms/typography";
-    @import "atoms/buttons";
-    @import "atoms/inputs";
-    @import "atoms/lists";
-    @import "atoms/tables";
+    @import "2.tools/bootstrap-grid/bootstrap-grid";
+    @import "2.tools/mixins";
 
-/* Molecules
+/* Generic
     ========================================================================== */
-    @import "molecules/wp-editor";
-    @import "molecules/forms";
-    @import "molecules/navigation";
-    @import "molecules/pagination";
-    @import "molecules/breadcrumbs";
-    @import "molecules/icons";
+    @import "3.generic/normalize";
+    @import "3.generic/reset";
 
-/* Organisms
+/* Base
     ========================================================================== */
-    @import "organisms/layout";
-    @import "organisms/print";
+    @import "4.base/inputs";
+    @import "4.base/tables";
+    @import "4.base/typography";
+
+/* Objects
+    ========================================================================== */
+    @import "5.objects/buttons";
+    @import "5.objects/forms";
+    @import "5.objects/icons";
+    @import "5.objects/navigation";
+
+/* Plugins
+    ========================================================================== */
+    @import "6.plugins/font-awesome";
+
+/* Componentes
+    ========================================================================== */
+    @import "7.componentes/breadcrumbs";
+    @import "7.componentes/pagination";
+
+/* Helpers
+    ========================================================================== */
+    @import "8.helpers/wp-editor";
+
+/* Templates
+    ========================================================================== */
+    @import "9.templates/layout";
+    @import "9.templates/print";

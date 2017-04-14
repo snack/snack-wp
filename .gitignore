@@ -3,7 +3,9 @@
 .buildpath
 .project
 .idea
+.DS_Store
 *.sublime-project
 *.sublime-workspace
 .settings/
 /styleguide/lib/vendor
+
