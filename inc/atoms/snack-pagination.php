@@ -23,13 +23,10 @@ function snack_pagination( $mid = 2, $end = 1, $query = null, $limit = null, $sh
         global $wp_query, $wp_rewrite;
         
         // Check custom query
-        $query = ( is_object( $query ) && null != $query ) ? $query : $wp_query;
+        $query = ( is_object( $query ) && $query ) ? $query : $wp_query;
         
-        if ($query->max_num_pages >= $limit) {
-            $total_pages = $limit ? $limit : $query->max_num_pages;
-        } else {
-            $total_pages = $query->max_num_pages;
-        }
+        // Check page limit
+        $total_pages = ( $limit && $limit <= $query->max_num_pages ) ?  $limit : $query->max_num_pages;
 
         if ( $total_pages > 1 ) {
             $url_base = $wp_rewrite->pagination_base;
