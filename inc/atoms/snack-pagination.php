@@ -9,30 +9,26 @@
  *
  * @param  int   $mid   Total of items that will show along with the current page.
  * @param  int   $end   Total of items displayed for the last few pages.
- * @param  bool  $show  Show all items.
  * @param  mixed $query Custom query.
+ * @param  int   $limit Limit total of pages fetched.
+ * @param  bool  $show  Show all items.
  *
  * @return string       Return the pagination.
  */
-function snack_pagination( $limit = null, $mid = 2, $end = 1, $show = false, $query = null ) {
+function snack_pagination( $mid = 2, $end = 1, $query = null, $format = null, $limit = null, $show = false ) {
 
     // Prevent show pagination number if Infinite Scroll of JetPack is active.
     if ( ! isset( $_GET[ 'infinity' ] ) ) {
 
         global $wp_query, $wp_rewrite;
-
-        if ($wp_query->max_num_pages >= $limit) {
-            $total_pages = $limit ? $limit : $wp_query->max_num_pages;
+        
+        // Check custom query
+        $query = ( is_object( $query ) && null != $query ) ? $query : $wp_query;
+        
+        if ($query->max_num_pages >= $limit) {
+            $total_pages = $limit ? $limit : $query->max_num_pages;
         } else {
-            $total_pages = $wp_query->max_num_pages;
-        }
-
-        if ( is_object( $query ) && null != $query ) {
-            if ($wp_query->max_num_pages >= $limit) {
-                $total_pages = $limit ? $limit : $wp_query->max_num_pages;
-            } else {
-                $total_pages = $wp_query->max_num_pages;
-            }
+            $total_pages = $query->max_num_pages;
         }
 
         if ( $total_pages > 1 ) {
