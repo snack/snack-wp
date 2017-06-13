@@ -15,7 +15,7 @@
  *
  * @return string       Return the pagination.
  */
-function snack_pagination( $mid = 2, $end = 1, $query = null, $format = null, $limit = null, $show = false ) {
+function snack_pagination( $mid = 2, $end = 1, $query = null, $limit = null, $show = false ) {
 
     // Prevent show pagination number if Infinite Scroll of JetPack is active.
     if ( ! isset( $_GET[ 'infinity' ] ) ) {
