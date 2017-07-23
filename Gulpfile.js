@@ -227,7 +227,7 @@ var gulp 		= require('gulp'),
     	});
 
 	// RUN TASKS ---------------------------------------------------------
-    	gulp.task('default', 	['watch', 'copy']);
+    	gulp.task('default', 	['watch', 'copy', 'js', 'images']);
     	gulp.task('images',		['sprite', 'imagemin']);
     	gulp.task('sync', 		['watch', 'browser-sync']);
     	gulp.task('css', 		['sass']);

@@ -5,17 +5,22 @@
     /*  ==========================================================================
         Grid
         ========================================================================== */
-        $total-columns : 12; // Total of columns
-        $column-width  : 62px; // Columns width
-        $gutter-width  : 36px; // Space between the columns
-        $breath        : 20px; // Option of lateral space for grid
-        $space         : 25px; // Vertical space
+        $total-columns : 12; /* Total of columns*/
+        $column-width  : 62px; /* Columns width*/
+        $gutter-width  : 36px; /* Space between the columns*/
+        $breath        : 20px; /* Option of lateral space for grid*/
+        $space         : 25px; /* Vertical space*/
 
     /*  Breakpoints
         ========================================================================== */
-        $breakpoint         : 768px;  // Breakpoint for small devices (Phones and Tablets)
-        $breakpoint-medium  : 992px;  // Breakpoint for medium devices (Desktops)
-        $breakpoint-large   : 1200px; // Breakpoint for large devices (Desktops)
+        $breakpoint         : 768px;  /* Breakpoint for small devices (Phones and Tablets)*/
+        $breakpoint-medium  : 992px;  /* Breakpoint for medium devices (Desktops)*/
+        $breakpoint-large   : 1200px; /* Breakpoint for large devices (Desktops)*/
+
+    /*  ==========================================================================
+        Fonts
+        ========================================================================== */
+        $font-family: Arial, sans-serif;
 
     /*  ==========================================================================
         Colors

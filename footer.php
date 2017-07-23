@@ -3,7 +3,7 @@
         <!-- Logo footer -->
         <div class="logo-footer">
             <a class="hover" href="<?php echo home_url( '/' ); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/build/img/" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/build/img/snack-wp.png" alt="">
             </a>
         </div>
     </div>
