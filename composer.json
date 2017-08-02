@@ -28,6 +28,10 @@
         "twig/twig": "1.*",
         "symfony/yaml": "2.5.*"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "2.*"
+    
+	},
     "autoload": {
         "psr-0": { "A2boilerplate": "styleguide/lib/src/" }
     },

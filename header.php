@@ -14,54 +14,43 @@
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon-precomposed.png">
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/apple-touch-icon.png">
-
     <?php wp_head(); ?>
-
-    <!-- Html5 Tags && Media Queries -->
     <!--[if lt IE 9]>
         <script src="<?php echo get_template_directory_uri(); ?>/build/js/libs/html5shiv-respond.min.js"></script>
     <![endif]-->
-
 </head>
 <body <?php body_class(); ?>>
-    <a href="#conteudo" class="sr-only go-content" tabindex="1" accesskey="1"><?php _e( 'Ir para conteúdo', 'snack-wp' ); ?></a>
-
-    <!-- Header -->
+	<a href="#conteudo" class="sr-only go-content" tabindex="1" accesskey="1"><?php _e( 'Ir para conteúdo', 'snack-wp' ); ?></a>
     <header class="header" role="banner">
-        <div class="container-fluid">
-            <!-- Logo -->
+    	<div class="container-fluid">
             <?php if ( is_home() ) : ?>
-                <h1 class="site-title">
-                    <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                        <?php bloginfo( 'name' ); ?>
-                    </a>
-                </h1>
-                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <h1 class="site-title">
+            	<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                	<?php bloginfo( 'name' ); ?>
+                </a>
+            </h1>
+            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             <?php else : ?>
-                <div class="site-title">
-                    <a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                        <?php bloginfo( 'name' ); ?>
-                    </a>
+            <div class="site-title">
+            	<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                	<?php bloginfo( 'name' ); ?>
+                </a>
                 </div>
                 <div class="site-description">
                     <?php bloginfo( 'description' ); ?>
                 </div>
             <?php endif ?>
-
-            <!-- Menu -->
             <nav aria-label="main navigation" role="navigation" class="navbar">
-                <?php
-                    $args = array(
-                        'theme_location'    => 'primary',
-                        'container'         => '',
-                        'container_class'   => '',
-                        'menu_class'        => 'nav-menu',
-                        'items_wrap'        => '<ul class="%2$s" role="menubar" id="main-menu">%3$s</ul>'
-                        );
-                    wp_nav_menu( $args );
-                ?>
+            <?php
+                $args = array(
+                    'theme_location'    => 'primary',
+                    'container'         => '',
+                    'container_class'   => '',
+                    'menu_class'        => 'nav-menu',
+                    'items_wrap'        => '<ul class="%2$s" role="menubar" id="main-menu">%3$s</ul>'
+                    );
+                wp_nav_menu( $args );
+            ?>
             </nav>
         </div>
     </header>
-
-
