@@ -129,6 +129,15 @@ const gulp 		= require('gulp'),
 
 	// SCRIPTS  ----------------------------------------------------------
 
+        // Babel
+        gulp.task('babel', () => {
+            return gulp.src(dirs._assets+'/js/*js')
+                .pipe(plugins.babel({
+                    presets: ['es2015']
+                }))
+                .pipe(gulp.dest(dirs._build+'/js/babel'))
+        });
+
 		// JShint
 		gulp.task('lint', ['concat'], () => {
 			return gulp.src(dirs._assets+'/js/*.js')
