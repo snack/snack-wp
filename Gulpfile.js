@@ -1,7 +1,7 @@
 'use strict';
 
 // Gulp Plugins
-var gulp 		= require('gulp'),
+const gulp 		= require('gulp'),
     plugins     = require('gulp-load-plugins')({    // Load all gulp plugins automatically
         rename: {
             'gulp-ruby-sass': 'sass'
@@ -19,7 +19,7 @@ var gulp 		= require('gulp'),
 
     // COPY --------------------------------------------------------------
 
-        gulp.task('copy:jquery', function () {
+        gulp.task('copy:jquery', () => {
             return gulp.src(dirs._components+"/jquery/jquery.js")
                         .pipe(plugins.replace('/*!', '/*'))
                         .pipe(plugins.rename({suffix: ".min"}))
@@ -27,7 +27,7 @@ var gulp 		= require('gulp'),
                         .pipe(gulp.dest(dirs._build+'/js/libs/'));
         });
 
-        gulp.task('copy:html5shiv', function () {
+        gulp.task('copy:html5shiv', () => {
             return gulp.src(dirs._components+"/html5shiv/dist/html5shiv.js")
                         .pipe(plugins.replace('/*!', '/*'))
                         .pipe(plugins.rename({suffix: ".min"}))
@@ -35,7 +35,7 @@ var gulp 		= require('gulp'),
                         .pipe(gulp.dest(dirs._build+'/js/libs/'));
         });
 
-        gulp.task('copy:respond', function () {
+        gulp.task('copy:respond', () => {
             return gulp.src(dirs._components+"/respond/src/respond.js")
                         .pipe(plugins.replace('/*!', '/*'))
                         .pipe(plugins.rename({suffix: ".min"}))
@@ -43,14 +43,14 @@ var gulp 		= require('gulp'),
                         .pipe(gulp.dest(dirs._build+'/js/libs/'));
         });
 
-        gulp.task('copy:normalize', function () {
+        gulp.task('copy:normalize', () => {
             return gulp.src(dirs._components+'/normalize.css/normalize.css')
                         .pipe(plugins.replace('/*!', '/*'))
                         .pipe(plugins.rename('normalize.scss'))
                         .pipe(gulp.dest(dirs._assets+'/scss/3.generic'));
         });
 
-        gulp.task('copy:font-awesome', function () {
+        gulp.task('copy:font-awesome', () => {
             gulp.src(dirs._components+'/font-awesome/fonts/*')
                         .pipe(gulp.dest(dirs._build+'/fonts/font-awesome/'));
 
@@ -64,7 +64,7 @@ var gulp 		= require('gulp'),
     // IMAGES ------------------------------------------------------------
 
 		//Imagemin
-		gulp.task('imagemin', function () {
+		gulp.task('imagemin', () => {
 		    return gulp.src(dirs._assets+'/img/*')
 		        .pipe(plugins.imagemin({
 		            progressive: true,
@@ -75,13 +75,13 @@ var gulp 		= require('gulp'),
 		});
 
 		//Sprite
-		gulp.task('sprite', function () {
+		gulp.task('sprite', () => {
 			var spriteData = gulp.src(dirs._assets+'/img/sprite/*.png').pipe(plugins.spritesmith({
 				imgName: 'sprite.png',
 				cssName: 'icons.scss',
 				cssFormat: 'scss',
 				algorithm: 'binary-tree',
-                cssVarMap: function (sprite) {
+                cssVarMap: function(sprite) {
                     if(sprite.name.indexOf('-hover') !== -1){
                         sprite.name = 'a:hover .ico-'+sprite.name;
                     } else {
@@ -97,8 +97,7 @@ var gulp 		= require('gulp'),
 	// STYLES ------------------------------------------------------------
 
         //main.min.css
-        gulp.task('sass', function () {
-
+        gulp.task('sass', () => {
     	    return gulp.src(dirs._assets+'/scss/main.scss')
                 .pipe(plugins.rename({suffix: ".min"}))
                 .pipe(plugins.sass({
@@ -106,14 +105,14 @@ var gulp 		= require('gulp'),
                     noCache: true,
                     style: "compressed"
                 }))
-                .on('error', function (err) { console.log(err.message); })
+                .on('error', (err) => { console.log(err.message); })
                 .pipe(gulp.dest(dirs._build+"/css"))
                 .pipe(plugins.livereload())
                 .pipe(reload({stream:true}));
     	});
 
         //Style Guide
-        gulp.task('sass_styleguide', function () {
+        gulp.task('sass_styleguide', () => {
 
             return gulp.src(dirs._sg_assets+'/css/main.scss')
                 .pipe(plugins.rename({suffix: ".min"}))
@@ -122,7 +121,7 @@ var gulp 		= require('gulp'),
                     noCache: true,
                     style: "compressed"
                 }))
-                .on('error', function (err) { console.log(err.message); })
+                .on('error', (err) => { console.log(err.message); })
                 .pipe(gulp.dest(dirs._sg_build+'/css/'))
                 .pipe(plugins.livereload())
                 .pipe(reload({stream:true}));
@@ -131,7 +130,7 @@ var gulp 		= require('gulp'),
 	// SCRIPTS  ----------------------------------------------------------
 
 		// JShint
-		gulp.task('lint', ['concat'], function() {
+		gulp.task('lint', ['concat'], () => {
 			return gulp.src(dirs._assets+'/js/*.js')
                 .pipe(plugins.jshint())
                 .pipe(plugins.jshint.reporter(stylish))
@@ -139,7 +138,7 @@ var gulp 		= require('gulp'),
 		});
 
 		// Concat
-		gulp.task('concat', function() {
+		gulp.task('concat', () => {
 
 			// scripts.min.js
 			gulp.src([
@@ -184,7 +183,7 @@ var gulp 		= require('gulp'),
 		});
 
         // Rename IE8 / IE7 support js
-        gulp.task('rename:html5shiv-respond', function () {
+        gulp.task('rename:html5shiv-respond', () => {
             return gulp.src([
                     dirs._components+"/html5shiv/dist/html5shiv.js", // html5shiv
                     dirs._components+"/respond/src/respond.js"       // Respond
@@ -196,20 +195,20 @@ var gulp 		= require('gulp'),
         });
 
 	// BROWSER SYNC ------------------------------------------------------
-    	gulp.task('browser-sync', function() {
+    	gulp.task('browser-sync', () => {
             browserSync.init({
                 proxy: "local.wordpress"
             });
     	});
 
 	// WATCH -------------------------------------------------------------
-    	gulp.task('watch', function() {
+    	gulp.task('watch', () => {
 
             // Livereload
             plugins.livereload.listen();
 
             // watch Files
-            gulp.watch('*.php').on('change', function(){
+            gulp.watch('*.php').on('change', () =>{
                 plugins.livereload.changed('/*.php');
             });
 
